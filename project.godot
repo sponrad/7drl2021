@@ -15,13 +15,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GodotStrategyGame"
-run/main_scene="res://MainScene.tscn"
+config/name="sponrad-7drl"
+run/main_scene="res://scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-BuildingData="*res://BuildingData.gd"
+BuildingData="*res://scripts/BuildingData.gd"
 
 [display]
 

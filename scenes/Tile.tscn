@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/Kenney/Tile/medievalTile_01.png" type="Texture" id=1]
+[ext_resource path="res://sprites/TileHighlight.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Tile.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Ground.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Tile" type="Area2D"]
+script = ExtResource( 3 )
+
+[node name="Ground" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Highlight" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 6.4, 6.4 )
+texture = ExtResource( 2 )
+
+[node name="BuildingIcon" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+[connection signal="input_event" from="." to="." method="_on_Tile_input_event"]
