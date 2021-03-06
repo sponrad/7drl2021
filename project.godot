@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 BuildingData="*res://scripts/BuildingData.gd"
+TileData="*res://scripts/TileData.gd"
 Globals="*res://scripts/Globals.gd"
 
 [display]

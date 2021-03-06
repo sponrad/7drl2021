@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/urizen_tiles.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Enemy.gd" type="Script" id=2]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Enemies"
@@ -214,12 +215,38 @@
 9/shapes = [  ]
 9/z_index = 0
 
-[node name="Wizard" type="Area2D"]
+[node name="Enemy" type="Area2D"]
 z_index = 1
+script = ExtResource( 2 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="RedDemon" type="TileMap" parent="."]
+visible = false
 use_parent_material = true
 position = Vector2( 20, 20 )
 tile_set = SubResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 9 )
+tile_data = PoolIntArray( 0, 0, 131073 )
+
+[node name="PurpleMage" type="TileMap" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2( 20, 20 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 393227 )
+
+[node name="BlueBlob" type="TileMap" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2( 20, 20 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 655374 )
+
+[node name="OrangeSkel" type="TileMap" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2( 20, 20 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 655368 )

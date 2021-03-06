@@ -10,6 +10,10 @@ var tilesWithBuildings : Array
 var tileSize : float = 64.0
 var dimensions : Vector2 = Vector2(19, 9)
 
+var monster_scene = load("res://scenes/Enemy.tscn")
+var monsters : Array
+var boss : Node
+
 func _ready ():
     # when we're initialized, get all of the tiles
     allTiles = get_tree().get_nodes_in_group("Tiles")
@@ -71,21 +75,22 @@ func generate_map():
         var grid_position = allTiles[x].grid_position()
         if grid_position.x in [0, 19] or grid_position.y in [0, 8]:
             var chance = randi() % 100
-            allTiles[x].set_type(Globals.tile_types.WATER)
+            allTiles[x].set_type(TileData.tile_types.WATER)
             if chance > 90:
-                allTiles[x].place_feature(Globals.feature_types.SHRUB)
+                allTiles[x].place_feature(TileData.feature_types.SHRUB)
             elif chance > 98:
                 # very special water feature
                 pass
         elif not grid_position.x in [1, 18] and not grid_position.y in [1, 7]:
-            allTiles[x].set_type(Globals.tile_types.GRASS)
+            allTiles[x].set_type(TileData.tile_types.GRASS)
             var chance = randi() % 100
-            if chance > 33:
+            if chance > 50:
                 chance = randi() % 100
                 if chance > 30 and chance < 60:
-                    allTiles[x].set_type(Globals.tile_types.GRASS_TREE)
+                    allTiles[x].set_type(TileData.tile_types.GRASS_TREE)
+                    allTiles[x].featureType = TileData.feature_types.TREE
                 elif chance >= 60 and chance < 80:
-                    allTiles[x].place_feature(Globals.feature_types.ROCK_GRAY)
+                    allTiles[x].place_feature(TileData.feature_types.ROCK_GRAY)
                 elif chance >= 80:
                     # some special thing?
                     pass
@@ -97,11 +102,18 @@ func generate_map():
             if chance > 70:
                 var second_chance = randi() % 100
                 if second_chance > 30:
-                    allTiles[x].place_feature(Globals.feature_types.ROCK_BROWN)
+                    allTiles[x].place_feature(TileData.feature_types.ROCK_BROWN)
                 else:
-                    allTiles[x].place_feature(Globals.feature_types.LOG)
+                    allTiles[x].place_feature(TileData.feature_types.LOG)
             elif chance > 98:
-                allTiles[x].place_feature(Globals.feature_types.FIRE)
+                allTiles[x].place_feature(TileData.feature_types.FIRE)
+        if allTiles[x].featureType == null \
+            and allTiles[x].tileType != TileData.tile_types.WATER \
+            and (randi() % 100 + grid_position.x - Globals.wizard_start.x) > 90:
+            var monster = monster_scene.instance()
+            add_child(monster)
+            monsters.append(monster)
+            monster.position = grid_position * Vector2(64, 64)
 
 func print_map_tile_integers():
     # debug function to write out a tilemap
