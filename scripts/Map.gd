@@ -8,6 +8,7 @@ var tilesWithBuildings : Array
 
 # size of a tile
 var tileSize : float = 64.0
+var dimensions : Vector2 = Vector2(19, 9)
 
 func _ready ():
 
@@ -65,3 +66,18 @@ func place_building (tile, texture):
     tile.place_building(texture)
 
     disable_tile_highlights()
+
+func generate_map():
+    print('generating that map')
+    for x in range(len(allTiles)):
+        var grid_position = allTiles[x].grid_position()
+        if grid_position.x in [0, 19] or grid_position.y in [0, 8]:
+            allTiles[x].set_type(Globals.tile_data.types.WATER)
+
+func print_map_tile_integers():
+    # debug function to write out a tilemap
+    print('getting tile integers')
+    for tile in allTiles:
+        # find the Globals.tile_paths
+        # print(tile.get_node('Ground').texture.load_path)
+        print(tile.grid_position())

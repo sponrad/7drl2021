@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=3]
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=4]
-[ext_resource path="res://scenes/Summon.tscn" type="PackedScene" id=5]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 4 )
@@ -554,5 +553,3 @@ position = Vector2( 1184, 544 )
 
 [node name="Tile161" parent="Tiles" instance=ExtResource( 1 )]
 position = Vector2( 1248, 544 )
-
-[node name="Area2D" parent="." instance=ExtResource( 5 )]

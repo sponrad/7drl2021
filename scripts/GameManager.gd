@@ -25,8 +25,8 @@ onready var ui : Node = get_node("UI")
 onready var map : Node = get_node("Tiles")
 
 func _ready ():
-
-    # update the UI when the game starts
+    map.generate_map()
+    # update the UI when the game rstarts
     ui.update_resource_text()
     ui.on_end_turn()
 

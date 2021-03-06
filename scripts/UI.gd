@@ -65,5 +65,8 @@ func _on_SolarPanelButton_pressed ():
 
 # called when the "End Turn" button is pressed
 func _on_EndTurnButton_pressed ():
-
     gameManager.end_turn()
+
+
+func _on_print_map_pressed():
+    gameManager.map.print_map_tile_integers()
