@@ -28,10 +28,16 @@ func _ready():
         type = types.DEMON
     elif chance >= 95:
         type = types.MAGE
-#    for tilemap in typeTileMaps.values():
-#        tilemap.hide()
+    for tilemap in typeTileMaps.values():
+        tilemap.hide()
     typeTileMaps[type].show()
 
+func awaken():
+    $AsleepText.hide()
+    awake = true
+
+func take_turn():
+    pass
 
 #func _process(delta):
 #    pass

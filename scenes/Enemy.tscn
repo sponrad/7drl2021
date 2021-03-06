@@ -250,3 +250,15 @@ position = Vector2( 20, 20 )
 tile_set = SubResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 655368 )
+
+[node name="AsleepText" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 8.0
+margin_right = 64.0
+margin_bottom = 22.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.52549 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Zzz"
+__meta__ = {
+"_edit_use_anchors_": false
+}
