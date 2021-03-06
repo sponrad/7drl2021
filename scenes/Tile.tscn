@@ -9,6 +9,7 @@
 extents = Vector2( 32, 32 )
 
 [node name="Tile" type="Area2D"]
+modulate = Color( 0.784314, 0.784314, 0.784314, 1 )
 script = ExtResource( 3 )
 
 [node name="Ground" type="Sprite" parent="."]
@@ -20,11 +21,8 @@ visible = false
 scale = Vector2( 6.4, 6.4 )
 texture = ExtResource( 2 )
 
-[node name="BuildingIcon" type="Sprite" parent="."]
+[node name="FeatureIcon" type="Sprite" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-
-[node name="TileMap" type="TileMap" parent="."]
-format = 1
 [connection signal="input_event" from="." to="." method="_on_Tile_input_event"]

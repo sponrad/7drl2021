@@ -25,7 +25,9 @@ onready var ui : Node = get_node("UI")
 onready var map : Node = get_node("Tiles")
 
 func _ready ():
+    randomize()
     map.generate_map()
+    #map.populate_monsters()
     # update the UI when the game rstarts
     ui.update_resource_text()
     ui.on_end_turn()

@@ -10,11 +10,12 @@ var hasBuilding : bool = false
 # can we place a building on this tile?
 var canPlaceBuilding : bool = false
 
-var tileType : int = Globals.tile_data.types.GRASS
+var tileType : int = Globals.tile_types.SAND
+var featureType: int
 
 # components
 onready var highlight : Sprite = get_node("Highlight")
-onready var buildingIcon : Sprite = get_node("BuildingIcon")
+onready var featureIcon : Sprite = get_node("FeatureIcon")
 
 # called once when the node is initialized
 func _ready ():
@@ -24,21 +25,22 @@ func _ready ():
 
 func set_type(type):
     tileType = type
-    var type_tiles = Globals.tile_data.type_sprites[type]
+    var type_tiles = Globals.tile_type_sprites[type]
     get_node('Ground').texture = type_tiles[randi() % len(type_tiles)]
 
 # turns on or off the green highlight
 func toggle_highlight (toggle):
-
     highlight.visible = toggle
     canPlaceBuilding = toggle
 
 # called when a building is placed on the tile
 # sets the tile's building texture to display it
-func place_building (buildingTexture):
-
+func place_feature(featureType):
     hasBuilding = true
-    buildingIcon.texture = buildingTexture
+    featureType = featureType
+    var feature_sprites = Globals.feature_type_sprites[featureType]
+    featureIcon.texture = feature_sprites[randi() % len(feature_sprites)]
+
 
 func grid_position():
     return Vector2(
@@ -48,7 +50,6 @@ func grid_position():
 
 # called when an input event takes place on the tile
 func _on_Tile_input_event(viewport, event, shape_idx):
-
     # did we click on this tile with our mouse?
     if event is InputEventMouseButton and event.pressed:
         var gameManager = get_node("/root/MainScene")

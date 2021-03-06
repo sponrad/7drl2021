@@ -222,4 +222,4 @@ use_parent_material = true
 position = Vector2( 32, 32 )
 tile_set = SubResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 536870912, 9 )
+tile_data = PoolIntArray( 0, 0, 9 )

@@ -11,14 +11,12 @@ var tileSize : float = 64.0
 var dimensions : Vector2 = Vector2(19, 9)
 
 func _ready ():
-
     # when we're initialized, get all of the tiles
     allTiles = get_tree().get_nodes_in_group("Tiles")
-
-    # find the start tile and place the Base building
-    for x in range(allTiles.size()):
-        if allTiles[x].startTile == true:
-            place_building(allTiles[x], BuildingData.base.iconTexture)
+#    # find the start tile and place the Base building
+#    for x in range(allTiles.size()):
+#        if allTiles[x].startTile == true:
+#            place_building(allTiles[x], BuildingData.base.iconTexture)
 
 # returns a tile at the given position - returns null if no tile is found
 func get_tile_at_position (position):
@@ -63,7 +61,7 @@ func disable_tile_highlights ():
 func place_building (tile, texture):
 
     tilesWithBuildings.append(tile)
-    tile.place_building(texture)
+    tile.place_feature(texture)
 
     disable_tile_highlights()
 
@@ -72,7 +70,38 @@ func generate_map():
     for x in range(len(allTiles)):
         var grid_position = allTiles[x].grid_position()
         if grid_position.x in [0, 19] or grid_position.y in [0, 8]:
-            allTiles[x].set_type(Globals.tile_data.types.WATER)
+            var chance = randi() % 100
+            allTiles[x].set_type(Globals.tile_types.WATER)
+            if chance > 90:
+                allTiles[x].place_feature(Globals.feature_types.SHRUB)
+            elif chance > 98:
+                # very special water feature
+                pass
+        elif not grid_position.x in [1, 18] and not grid_position.y in [1, 7]:
+            allTiles[x].set_type(Globals.tile_types.GRASS)
+            var chance = randi() % 100
+            if chance > 33:
+                chance = randi() % 100
+                if chance > 30 and chance < 60:
+                    allTiles[x].set_type(Globals.tile_types.GRASS_TREE)
+                elif chance >= 60 and chance < 80:
+                    allTiles[x].place_feature(Globals.feature_types.ROCK_GRAY)
+                elif chance >= 80:
+                    # some special thing?
+                    pass
+        elif grid_position == Globals.wizard_start:
+            continue
+        else:
+            #sand
+            var chance = randi() % 100
+            if chance > 70:
+                var second_chance = randi() % 100
+                if second_chance > 30:
+                    allTiles[x].place_feature(Globals.feature_types.ROCK_BROWN)
+                else:
+                    allTiles[x].place_feature(Globals.feature_types.LOG)
+            elif chance > 98:
+                allTiles[x].place_feature(Globals.feature_types.FIRE)
 
 func print_map_tile_integers():
     # debug function to write out a tilemap
