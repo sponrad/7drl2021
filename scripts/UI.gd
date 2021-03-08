@@ -70,3 +70,20 @@ func _on_EndTurnButton_pressed ():
 
 func _on_print_map_pressed():
     gameManager.map.print_map_tile_integers()
+
+
+func _on_CastButton_pressed():
+    if $CastSpellList.visible:
+        $CastSpellList.hide()
+    else:
+        $CastSpellList.show()
+    for spell in gameManager.get_node('Wizard').known_spells:
+        print(SpellData.defs[spell].name)
+
+
+func _on_StatsButton_pressed():
+    print('pressed stats')
+
+
+func _on_ResearchButton_pressed():
+    print('pressed research')

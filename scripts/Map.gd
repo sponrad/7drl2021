@@ -70,7 +70,6 @@ func place_building (tile, texture):
     disable_tile_highlights()
 
 func generate_map():
-    print('generating that map')
     for x in range(len(allTiles)):
         var grid_position = allTiles[x].grid_position()
         if grid_position.x in [0, 19] or grid_position.y in [0, 8]:
@@ -122,3 +121,10 @@ func print_map_tile_integers():
         # find the Globals.tile_paths
         # print(tile.get_node('Ground').texture.load_path)
         print(tile.grid_position())
+
+func show_tiles(show=true):
+    for tile in allTiles:
+        if show:
+            tile.show()
+        else:
+            tile.hide()

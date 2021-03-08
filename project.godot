@@ -17,12 +17,14 @@ _global_script_class_icons={
 
 config/name="sponrad-7drl"
 run/main_scene="res://scenes/MainScene.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 
 [autoload]
 
 BuildingData="*res://scripts/BuildingData.gd"
 TileData="*res://scripts/TileData.gd"
+SpellData="*res://scripts/SpellData.gd"
 Globals="*res://scripts/Globals.gd"
 
 [display]

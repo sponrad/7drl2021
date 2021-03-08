@@ -19,9 +19,7 @@ func _ready():
         types.BLOB: $BlueBlob,
         types.SKELETON: $OrangeSkel,
     }
-    randomize()
     var chance = randi() % 100
-    print(chance)
     if chance > 50 and chance < 75:
         type = types.BLOB
     elif chance >= 75 and chance < 95:
