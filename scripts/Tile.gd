@@ -20,6 +20,7 @@ onready var featureIcon : Sprite = get_node("FeatureIcon")
 # called once when the node is initialized
 func _ready ():
     # add the tile to the "Tiles" group when the node is initialized
+    z_index = -1
     add_to_group("Tiles")
     set_type(tileType)
 

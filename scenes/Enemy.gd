@@ -31,6 +31,7 @@ func _ready():
     for tilemap in typeTileMaps.values():
         tilemap.hide()
     typeTileMaps[type].show()
+    z_index = -1
 
 func awaken():
     $AsleepText.hide()
