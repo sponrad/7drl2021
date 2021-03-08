@@ -42,7 +42,7 @@ func get_tile_at_coords(coords:Vector2):
 
 # highlights the tiles we can cast spells
 func highlight_available_tiles ():
-    var targeting = SpellData.defs[gameManager.spellToCast].targeting
+    var targeting = SpellData.defs[gameManager.spell_to_cast].targeting
     if targeting == SpellData.targeting.ANYWHERE:
         for tile in allTiles:
             if tile.grid_position() == Globals.wizard_start:
@@ -55,11 +55,15 @@ func highlight_available_tiles ():
             tile.toggle_highlight(true)
     elif targeting == SpellData.targeting.NEXT_TO_WIZARD:
         var pos = Globals.wizard_start
-        get_tile_at_coords(Vector2(pos.x, pos.y - 1)).toggle_highlight(true)
-        get_tile_at_coords(Vector2(pos.x + 1, pos.y - 1)).toggle_highlight(true)
-        get_tile_at_coords(Vector2(pos.x + 1, pos.y)).toggle_highlight(true)
-        get_tile_at_coords(Vector2(pos.x + 1, pos.y + 1)).toggle_highlight(true)
-        get_tile_at_coords(Vector2(pos.x, pos.y + 1)).toggle_highlight(true)
+        var adjacent_tiles = [
+            get_tile_at_coords(Vector2(pos.x, pos.y - 1)),
+            get_tile_at_coords(Vector2(pos.x + 1, pos.y - 1)),
+            get_tile_at_coords(Vector2(pos.x + 1, pos.y)),
+            get_tile_at_coords(Vector2(pos.x + 1, pos.y + 1)),
+            get_tile_at_coords(Vector2(pos.x, pos.y + 1)),
+        ]
+        for tile in adjacent_tiles:
+            tile.toggle_highlight(true)
 
 # disables all of the tile highlights
 func disable_tile_highlights ():
@@ -91,7 +95,7 @@ func generate_map():
                 chance = randi() % 100
                 if chance > 30 and chance < 60:
                     allTiles[x].set_type(TileData.tile_types.GRASS_TREE)
-                    allTiles[x].featureType = TileData.feature_types.TREE
+                    allTiles[x].feature_type = TileData.feature_types.TREE
                 elif chance >= 60 and chance < 80:
                     allTiles[x].place_feature(TileData.feature_types.ROCK_GRAY)
                 elif chance >= 80:
@@ -110,7 +114,7 @@ func generate_map():
                     allTiles[x].place_feature(TileData.feature_types.LOG)
             elif chance > 98:
                 allTiles[x].place_feature(TileData.feature_types.FIRE)
-        if allTiles[x].featureType == null \
+        if allTiles[x].feature_type == null \
             and allTiles[x].tileType != TileData.tile_types.WATER \
             and (randi() % 100 + grid_position.x - Globals.wizard_start.x) > 90:
             var monster = monster_scene.instance()

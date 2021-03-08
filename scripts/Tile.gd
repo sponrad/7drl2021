@@ -11,7 +11,7 @@ var hasBuilding : bool = false
 var canCastSpell : bool = false
 
 var tileType : int = TileData.tile_types.SAND
-var featureType = null
+var feature_type = null
 
 # components
 onready var highlight : Sprite = get_node("Highlight")
@@ -38,8 +38,8 @@ func toggle_highlight (toggle):
 # sets the tile's building texture to display it
 func place_feature(new_type):
     hasBuilding = true
-    featureType = new_type
-    var feature_sprites = TileData.feature_type_sprites[featureType]
+    feature_type = new_type
+    var feature_sprites = TileData.feature_type_sprites[feature_type]
     featureIcon.texture = feature_sprites[randi() % len(feature_sprites)]
 
 
