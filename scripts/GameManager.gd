@@ -9,6 +9,9 @@ var current_turn : int = 1
 var currently_casting_spell: bool = false
 var spell_to_cast: int
 
+var current_summon
+var currently_moving_summon: bool = false
+
 # components
 onready var ui : Node = get_node("UI")
 onready var map : Node = get_node("Tiles")
@@ -62,8 +65,17 @@ func cast_spell(target_tile):
     var spell = spell_scene.instance()
     spell.position = target_tile.position
     add_child(spell)
+    currently_casting_spell = false
 
 func add_to_power_per_turn(amount):
     power_per_turn += amount
     mana_per_turn = power_per_turn
     ui.update_resource_text()
+
+func start_move_summon():
+    currently_moving_summon = true
+    map.highlight_available_tiles()
+
+func move_summon(target_tile):
+    current_summon.move_to(target_tile)
+    map.disable_tile_highlights()

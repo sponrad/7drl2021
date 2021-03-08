@@ -1,7 +1,7 @@
 extends Area2D
 
 # can we cast the current spell on this tile?
-var can_cast_spell : bool = false
+var can_target : bool = false
 var tile_type : int = TileData.tile_types.SAND
 var feature_type = null
 var fog_of_war = false
@@ -9,6 +9,8 @@ var fog_of_war = false
 # components
 onready var highlight : Sprite = get_node("Highlight")
 onready var featureIcon : Sprite = get_node("FeatureIcon")
+
+onready var game_manager : Node = get_node("/root/MainScene")
 
 # called once when the node is initialized
 func _ready ():
@@ -25,7 +27,7 @@ func set_type(type):
 # turns on or off the green highlight
 func toggle_highlight (toggle):
     highlight.visible = toggle
-    can_cast_spell = toggle
+    can_target = toggle
 
 func place_feature(new_type):
     feature_type = new_type
@@ -43,10 +45,14 @@ func grid_position():
 func _on_Tile_input_event(_viewport, event, _shape_idx):
     # did we click on this tile with our mouse?
     if event is InputEventMouseButton and event.pressed:
-        var game_manager = get_node("/root/MainScene")
         print(grid_position())
-        if game_manager.currently_casting_spell and can_cast_spell:
+        if game_manager.currently_casting_spell and can_target:
             game_manager.cast_spell(self)
+        elif game_manager.current_summon \
+            and game_manager.current_summon.position == position:
+            game_manager.start_move_summon()
+        elif game_manager.currently_moving_summon and can_target:
+            game_manager.move_summon(self)
 
 func get_power_per_turn():
     # for the enchant spell
@@ -60,3 +66,16 @@ func show_tile_power(show):
         $TilePower.show()
     else:
         $TilePower.hide()
+
+func has_enemy():
+    for monster in game_manager.map.monsters:
+        if monster.position == position:
+            return monster
+    return false
+
+func is_moveable():
+    if has_enemy() \
+    or feature_type in [TileData.feature_types.ROCK_BROWN,
+                                        TileData.feature_types.ROCK_GRAY]:
+        return false
+    return true

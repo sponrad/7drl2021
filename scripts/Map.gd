@@ -38,28 +38,41 @@ func get_tile_at_coords(coords:Vector2):
 
 # highlights the tiles we can cast spells
 func highlight_available_tiles ():
-    var targeting = SpellData.defs[game_manager.spell_to_cast].targeting
-    if targeting == SpellData.targeting.ANYWHERE:
-        for tile in allTiles:
-            if tile.grid_position() == Globals.wizard_start:
-                continue
-            tile.toggle_highlight(true)
-    elif targeting == SpellData.targeting.ANY_VISIBILE:
-        for tile in allTiles:
-            if tile.grid_position() == Globals.wizard_start:
-                continue
-            tile.toggle_highlight(true)
-    elif targeting == SpellData.targeting.NEXT_TO_WIZARD:
-        var pos = Globals.wizard_start
+    if game_manager.currently_casting_spell:
+        var targeting = SpellData.defs[game_manager.spell_to_cast].targeting
+        if targeting == SpellData.targeting.ANYWHERE:
+            for tile in allTiles:
+                if tile.grid_position() == Globals.wizard_start:
+                    continue
+                tile.toggle_highlight(true)
+        elif targeting == SpellData.targeting.ANY_VISIBILE:
+            for tile in allTiles:
+                if tile.grid_position() == Globals.wizard_start:
+                    continue
+                tile.toggle_highlight(true)
+        elif targeting == SpellData.targeting.NEXT_TO_WIZARD:
+            var pos = Globals.wizard_start
+            var adjacent_tiles = [
+                get_tile_at_coords(Vector2(pos.x, pos.y - 1)),
+                get_tile_at_coords(Vector2(pos.x + 1, pos.y - 1)),
+                get_tile_at_coords(Vector2(pos.x + 1, pos.y)),
+                get_tile_at_coords(Vector2(pos.x + 1, pos.y + 1)),
+                get_tile_at_coords(Vector2(pos.x, pos.y + 1)),
+            ]
+            for tile in adjacent_tiles:
+                tile.toggle_highlight(true)
+    elif game_manager.currently_moving_summon:
+        var summon = game_manager.current_summon
+        var pos = get_tile_at_position(summon.position).grid_position()
         var adjacent_tiles = [
+            get_tile_at_coords(Vector2(pos.x - 1, pos.y)),
             get_tile_at_coords(Vector2(pos.x, pos.y - 1)),
-            get_tile_at_coords(Vector2(pos.x + 1, pos.y - 1)),
             get_tile_at_coords(Vector2(pos.x + 1, pos.y)),
-            get_tile_at_coords(Vector2(pos.x + 1, pos.y + 1)),
             get_tile_at_coords(Vector2(pos.x, pos.y + 1)),
         ]
         for tile in adjacent_tiles:
-            tile.toggle_highlight(true)
+            if tile.is_moveable():
+                tile.toggle_highlight(true)
 
 # disables all of the tile highlights
 func disable_tile_highlights ():

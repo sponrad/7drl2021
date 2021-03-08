@@ -30,9 +30,6 @@ class Spell:
         self.targeting = targeting
         self.scene_path = scene_path
 
-    func cast(target_tile):
-        print('casting %s at %s' % [self.name, target_tile.grid_position()])
-
 
 var defs = {
     spells.ENCHANT_AREA: Spell.new(
@@ -47,7 +44,7 @@ var defs = {
         'Summon a small quick spirit that cannot attack',
         1,
         targeting.NEXT_TO_WIZARD,
-        ''
+        'res://scenes/spells/MAGIC_SPIRIT.tscn'
     ),
     spells.FAR_SIGHT: Spell.new(
         'Far Sight',
