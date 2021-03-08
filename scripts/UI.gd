@@ -15,6 +15,11 @@ onready var curTurnText : Label = get_node("TurnText")
 # game manager object in order to access those functions and values
 onready var gameManager : Node = get_node("/root/MainScene")
 
+var cast_spell_icon = preload("res://sprites/Kenney/Environment/medievalEnvironment_21.png")
+var cancel_cast_icon = preload("res://sprites/X.png")
+
+
+
 # called when a turn is over - resets the UI
 func on_end_turn ():
 
@@ -73,16 +78,30 @@ func _on_print_map_pressed():
 
 
 func _on_SelectCastButton_pressed():
-    if $SpellPicker.visible:
+    if $SpellPicker.visible or gameManager.currentlyCastingSpell:
         $SpellPicker.hide()
+        gameManager.cancel_spell_cast()
     else:
         $SpellPicker.popup()
     $SpellPicker.get_node('CastSpellList').populate_spells(gameManager.get_node('Wizard').known_spells)
 
+func _on_CastButton_pressed():
+    var spell = $SpellPicker.get_node("CastSpellList").selected_spell
+    print('casting %s' % SpellData.defs[spell].name)
+    $SpellPicker.hide()
+    # change the image on the
+    set_casting_spell_icon(true)
+    gameManager.on_select_spell(spell)
+
+func set_casting_spell_icon(casting):
+    if casting:
+        actionButtons.get_node("SelectCastButton").icon = cancel_cast_icon
+    else:
+        actionButtons.get_node("SelectCastButton").icon = cast_spell_icon
 
 func _on_StatsButton_pressed():
     print('pressed stats')
 
-
 func _on_ResearchButton_pressed():
     print('pressed research')
+

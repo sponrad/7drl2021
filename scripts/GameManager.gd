@@ -17,6 +17,9 @@ var curTurn : int = 1
 # are we currently placing down a building?
 var currentlyPlacingBuilding : bool = false
 
+var currentlyCastingSpell: bool = false
+var spellToCast: int
+
 # type of building we're currently placing
 var buildingToPlace : int
 
@@ -60,6 +63,20 @@ func on_select_building (buildingType):
 
     # highlight the tiles we can place a building on
     map.highlight_available_tiles()
+
+func on_select_spell(spell):
+    currentlyCastingSpell = true
+    spellToCast = spell
+    map.highlight_available_tiles()
+
+func cancel_spell_cast():
+    currentlyCastingSpell = false
+    map.disable_tile_highlights()
+    ui.set_casting_spell_icon(false)
+
+func cast_spell(tileToCastOn):
+    print('casting %s at %s' % [spellToCast, tileToCastOn.grid_position()])
+    ui.set_casting_spell_icon(false)
 
 # called when we place a building down on the grid
 func place_building (tileToPlaceOn):

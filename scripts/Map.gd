@@ -14,6 +14,8 @@ var monster_scene = load("res://scenes/Enemy.tscn")
 var monsters : Array
 var boss : Node
 
+onready var gameManager : Node = get_node("/root/MainScene")
+
 func _ready ():
     # when we're initialized, get all of the tiles
     allTiles = get_tree().get_nodes_in_group("Tiles")
@@ -24,36 +26,40 @@ func _ready ():
 
 # returns a tile at the given position - returns null if no tile is found
 func get_tile_at_position (position):
-
     # loop through all of the tiles
     for x in range(allTiles.size()):
         # if the tile matches our given position, return it
         if allTiles[x].position == position and allTiles[x].hasBuilding == false:
             return allTiles[x]
-
     return null
 
-# highlights the tiles we can place buildings on
+func get_tile_at_coords(coords:Vector2):
+    for x in range(allTiles.size()):
+        # if the tile matches our given position, return it
+        if allTiles[x].grid_position() == coords:
+            return allTiles[x]
+    return null
+
+# highlights the tiles we can cast spells
 func highlight_available_tiles ():
-
-    # loop through all of the tiles with buildings
-    for x in range(tilesWithBuildings.size()):
-
-        # get the tile north, south, east and west of this one
-        var northTile = get_tile_at_position(tilesWithBuildings[x].position + Vector2(0, tileSize))
-        var southTile = get_tile_at_position(tilesWithBuildings[x].position + Vector2(0, -tileSize))
-        var eastTile = get_tile_at_position(tilesWithBuildings[x].position + Vector2(tileSize, 0))
-        var westTile = get_tile_at_position(tilesWithBuildings[x].position + Vector2(-tileSize, 0))
-
-        # if the directional tiles aren't null, toggle their highlight - allowing us to build
-        if northTile != null:
-            northTile.toggle_highlight(true)
-        if southTile != null:
-            southTile.toggle_highlight(true)
-        if eastTile != null:
-            eastTile.toggle_highlight(true)
-        if westTile != null:
-            westTile.toggle_highlight(true)
+    var targeting = SpellData.defs[gameManager.spellToCast].targeting
+    if targeting == SpellData.targeting.ANYWHERE:
+        for tile in allTiles:
+            if tile.grid_position() == Globals.wizard_start:
+                continue
+            tile.toggle_highlight(true)
+    elif targeting == SpellData.targeting.ANY_VISIBILE:
+        for tile in allTiles:
+            if tile.grid_position() == Globals.wizard_start:
+                continue
+            tile.toggle_highlight(true)
+    elif targeting == SpellData.targeting.NEXT_TO_WIZARD:
+        var pos = Globals.wizard_start
+        get_tile_at_coords(Vector2(pos.x, pos.y - 1)).toggle_highlight(true)
+        get_tile_at_coords(Vector2(pos.x + 1, pos.y - 1)).toggle_highlight(true)
+        get_tile_at_coords(Vector2(pos.x + 1, pos.y)).toggle_highlight(true)
+        get_tile_at_coords(Vector2(pos.x + 1, pos.y + 1)).toggle_highlight(true)
+        get_tile_at_coords(Vector2(pos.x, pos.y + 1)).toggle_highlight(true)
 
 # disables all of the tile highlights
 func disable_tile_highlights ():
@@ -63,10 +69,8 @@ func disable_tile_highlights ():
 
 # places down a building on the map
 func place_building (tile, texture):
-
     tilesWithBuildings.append(tile)
     tile.place_feature(texture)
-
     disable_tile_highlights()
 
 func generate_map():

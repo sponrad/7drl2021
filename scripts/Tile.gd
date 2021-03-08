@@ -8,7 +8,7 @@ export var startTile = false
 var hasBuilding : bool = false
 
 # can we place a building on this tile?
-var canPlaceBuilding : bool = false
+var canCastSpell : bool = false
 
 var tileType : int = TileData.tile_types.SAND
 var featureType = null
@@ -32,7 +32,7 @@ func set_type(type):
 # turns on or off the green highlight
 func toggle_highlight (toggle):
     highlight.visible = toggle
-    canPlaceBuilding = toggle
+    canCastSpell = toggle
 
 # called when a building is placed on the tile
 # sets the tile's building texture to display it
@@ -55,6 +55,5 @@ func _on_Tile_input_event(_viewport, event, _shape_idx):
     if event is InputEventMouseButton and event.pressed:
         var gameManager = get_node("/root/MainScene")
         print(grid_position())
-        # if we can place a building down on this tile, then do so
-        if gameManager.currentlyPlacingBuilding and canPlaceBuilding:
-            gameManager.place_building(self)
+        if gameManager.currentlyCastingSpell and canCastSpell:
+            gameManager.cast_spell(self)
