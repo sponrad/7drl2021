@@ -19,10 +19,6 @@ onready var game_manager : Node = get_node("/root/MainScene")
 func _ready ():
     # when we're initialized, get all of the tiles
     allTiles = get_tree().get_nodes_in_group("Tiles")
-#    # find the start tile and place the Base building
-#    for x in range(allTiles.size()):
-#        if allTiles[x].startTile == true:
-#            place_building(allTiles[x], BuildingData.base.iconTexture)
 
 # returns a tile at the given position - returns null if no tile is found
 func get_tile_at_position (position):
@@ -67,15 +63,9 @@ func highlight_available_tiles ():
 
 # disables all of the tile highlights
 func disable_tile_highlights ():
-
     for x in range(allTiles.size()):
         allTiles[x].toggle_highlight(false)
 
-# places down a building on the map
-func place_building (tile, texture):
-    tilesWithBuildings.append(tile)
-    tile.place_feature(texture)
-    disable_tile_highlights()
 
 func generate_map():
     for x in range(len(allTiles)):
@@ -122,17 +112,13 @@ func generate_map():
             monsters.append(monster)
             monster.position = grid_position * Vector2(64, 64)
 
-func print_map_tile_integers():
-    # debug function to write out a tilemap
-    print('getting tile integers')
+func get_visible_tiles():
+    var ret = []
     for tile in allTiles:
-        # find the Globals.tile_paths
-        # print(tile.get_node('Ground').texture.load_path)
-        print(tile.grid_position())
+        if not tile.fog_of_war:
+            ret.append(tile)
+    return ret
 
-func show_tiles(show=true):
-    for tile in allTiles:
-        if show:
-            tile.show()
-        else:
-            tile.hide()
+func show_visible_tile_power(show):
+    for tile in get_visible_tiles():
+        tile.show_tile_power(show)

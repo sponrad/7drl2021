@@ -41,6 +41,8 @@ func on_select_spell(spell):
         ui.set_casting_spell_icon(false)
         #message!
         return
+    if (spell == SpellData.spells.ENCHANT_AREA):
+        map.show_visible_tile_power(true)
     currently_casting_spell = true
     spell_to_cast = spell
     map.highlight_available_tiles()
@@ -48,11 +50,13 @@ func on_select_spell(spell):
 func cancel_spell_cast():
     currently_casting_spell = false
     map.disable_tile_highlights()
+    map.show_visible_tile_power(false)
     ui.set_casting_spell_icon(false)
 
 func cast_spell(target_tile):
     current_mana -= SpellData.defs[spell_to_cast].cost
     map.disable_tile_highlights()
+    map.show_visible_tile_power(false)
     ui.set_casting_spell_icon(false)
     var spell_scene = load(SpellData.defs[spell_to_cast].scene_path)
     var spell = spell_scene.instance()

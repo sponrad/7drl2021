@@ -26,4 +26,17 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="TilePower" type="Label" parent="."]
+visible = false
+margin_left = -26.1925
+margin_top = -27.6083
+margin_right = 13.8075
+margin_bottom = -13.6083
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "+5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="input_event" from="." to="." method="_on_Tile_input_event"]

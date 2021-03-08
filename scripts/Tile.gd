@@ -4,6 +4,7 @@ extends Area2D
 var can_cast_spell : bool = false
 var tile_type : int = TileData.tile_types.SAND
 var feature_type = null
+var fog_of_war = false
 
 # components
 onready var highlight : Sprite = get_node("Highlight")
@@ -51,3 +52,11 @@ func get_power_per_turn():
     # for the enchant spell
     return TileData.feature_type_defs[feature_type]['power'] \
         + TileData.defs[tile_type]['power']
+
+func show_tile_power(show):
+    var power = get_power_per_turn()
+    $TilePower.text = '+%s' % power
+    if show:
+        $TilePower.show()
+    else:
+        $TilePower.hide()
