@@ -72,13 +72,12 @@ func _on_print_map_pressed():
     gameManager.map.print_map_tile_integers()
 
 
-func _on_CastButton_pressed():
-    if $CastSpellList.visible:
-        $CastSpellList.hide()
+func _on_SelectCastButton_pressed():
+    if $SpellPicker.visible:
+        $SpellPicker.hide()
     else:
-        $CastSpellList.show()
-    for spell in gameManager.get_node('Wizard').known_spells:
-        print(SpellData.defs[spell].name)
+        $SpellPicker.popup()
+    $SpellPicker.get_node('CastSpellList').populate_spells(gameManager.get_node('Wizard').known_spells)
 
 
 func _on_StatsButton_pressed():

@@ -25,15 +25,32 @@ class Spell:
     var name
     var cost
     var upkeep
+    var description
     # TODO var other_stats_abilities
 
-    func _init(name):
+    func _init(name, description):
         self.name = name
+        self.description = description
 
 var defs = {
-    spells.ENCHANT_AREA: Spell.new('Enchant Area'),
-    spells.MAGIC_SPIRIT: Spell.new('Summon Magic Spirit'),
-    spells.FAR_SIGHT: Spell.new('Far Sight'),
-    spells.FIRE_BOLT: Spell.new('Fire Bolt'),
-    spells.IMP: Spell.new('Summon Imp'),
+    spells.ENCHANT_AREA: Spell.new(
+        'Enchant Tile',
+        'Enchant the chosen map tile, gaining the tiles power'
+    ),
+    spells.MAGIC_SPIRIT: Spell.new(
+        'Summon Magic Spirit',
+        'Summon a small quick spirit that cannot attack'
+    ),
+    spells.FAR_SIGHT: Spell.new(
+        'Far Sight',
+        'Reveal a region of the map'
+    ),
+    spells.FIRE_BOLT: Spell.new(
+        'Fire Bolt',
+        'Shoot a bolt of slightly intense flame at a single target'
+    ),
+    spells.IMP: Spell.new(
+        'Summon Imp',
+        'Summon a small demon helper'
+    ),
 }
