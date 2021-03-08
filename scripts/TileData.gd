@@ -1,17 +1,40 @@
 extends Node
 
 enum tile_types {
-        SAND,
-        GRASS_ROAD,
-        SNOW_ROAD,
-        DIRT,
-        STONE,
-        WATER,
-        SNOW,
-        GRASS_TREE,
-        GRASS_OTHER,
-        GRASS,
-    }
+    SAND,
+    GRASS_ROAD,
+    SNOW_ROAD,
+    DIRT,
+    STONE,
+    WATER,
+    SNOW,
+    GRASS_TREE,
+    GRASS_OTHER,
+    GRASS,
+}
+
+var defs = {
+    tile_types.SAND: {
+        'power': 0,
+    },
+    tile_types.GRASS_ROAD: {},
+    tile_types.SNOW_ROAD: {},
+    tile_types.DIRT: {
+        'power': 0,
+    },
+    tile_types.STONE: {},
+    tile_types.WATER: {
+        'power': 1,
+    },
+    tile_types.SNOW: {},
+    tile_types.GRASS_TREE: {
+        'power': 2,
+    },
+    tile_types.GRASS_OTHER: {},
+    tile_types.GRASS: {
+        'power': 1,
+    },
+}
 
 var tile_type_sprites = {
     tile_types.SAND: [
@@ -102,6 +125,31 @@ enum feature_types {
     TREE,
     FIRE,
 }
+
+var feature_type_defs = {
+    null: {
+        'power': 0,
+    },
+    feature_types.TREE: {
+        'power': 1,
+    },
+    feature_types.LOG: {
+        'power': 1,
+    },
+    feature_types.ROCK_GRAY: {
+        'power': 0,
+    },
+    feature_types.SHRUB: {
+        'power': 0,
+    },
+    feature_types.ROCK_BROWN: {
+        'power': 0,
+    },
+    feature_types.FIRE: {
+        'power': 2,
+    },
+}
+
 
 var feature_type_sprites = {
     feature_types.TREE: [

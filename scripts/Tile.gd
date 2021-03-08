@@ -1,16 +1,8 @@
 extends Area2D
 
-# is this the starting tile?
-# a Base building will be placed here at the start of the game
-export var startTile = false
-
-# do we have a building on this tile?
-var hasBuilding : bool = false
-
-# can we place a building on this tile?
-var canCastSpell : bool = false
-
-var tileType : int = TileData.tile_types.SAND
+# can we cast the current spell on this tile?
+var can_cast_spell : bool = false
+var tile_type : int = TileData.tile_types.SAND
 var feature_type = null
 
 # components
@@ -22,22 +14,19 @@ func _ready ():
     # add the tile to the "Tiles" group when the node is initialized
     z_index = -1
     add_to_group("Tiles")
-    set_type(tileType)
+    set_type(tile_type)
 
 func set_type(type):
-    tileType = type
+    tile_type = type
     var type_tiles = TileData.tile_type_sprites[type]
     get_node('Ground').texture = type_tiles[randi() % len(type_tiles)]
 
 # turns on or off the green highlight
 func toggle_highlight (toggle):
     highlight.visible = toggle
-    canCastSpell = toggle
+    can_cast_spell = toggle
 
-# called when a building is placed on the tile
-# sets the tile's building texture to display it
 func place_feature(new_type):
-    hasBuilding = true
     feature_type = new_type
     var feature_sprites = TileData.feature_type_sprites[feature_type]
     featureIcon.texture = feature_sprites[randi() % len(feature_sprites)]
@@ -53,7 +42,12 @@ func grid_position():
 func _on_Tile_input_event(_viewport, event, _shape_idx):
     # did we click on this tile with our mouse?
     if event is InputEventMouseButton and event.pressed:
-        var gameManager = get_node("/root/MainScene")
+        var game_manager = get_node("/root/MainScene")
         print(grid_position())
-        if gameManager.currentlyCastingSpell and canCastSpell:
-            gameManager.cast_spell(self)
+        if game_manager.currently_casting_spell and can_cast_spell:
+            game_manager.cast_spell(self)
+
+func get_power_per_turn():
+    # for the enchant spell
+    return TileData.feature_type_defs[feature_type]['power'] \
+        + TileData.defs[tile_type]['power']

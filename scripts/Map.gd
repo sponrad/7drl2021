@@ -14,7 +14,7 @@ var monster_scene = load("res://scenes/Enemy.tscn")
 var monsters : Array
 var boss : Node
 
-onready var gameManager : Node = get_node("/root/MainScene")
+onready var game_manager : Node = get_node("/root/MainScene")
 
 func _ready ():
     # when we're initialized, get all of the tiles
@@ -29,7 +29,7 @@ func get_tile_at_position (position):
     # loop through all of the tiles
     for x in range(allTiles.size()):
         # if the tile matches our given position, return it
-        if allTiles[x].position == position and allTiles[x].hasBuilding == false:
+        if allTiles[x].position == position:
             return allTiles[x]
     return null
 
@@ -42,7 +42,7 @@ func get_tile_at_coords(coords:Vector2):
 
 # highlights the tiles we can cast spells
 func highlight_available_tiles ():
-    var targeting = SpellData.defs[gameManager.spell_to_cast].targeting
+    var targeting = SpellData.defs[game_manager.spell_to_cast].targeting
     if targeting == SpellData.targeting.ANYWHERE:
         for tile in allTiles:
             if tile.grid_position() == Globals.wizard_start:
@@ -115,7 +115,7 @@ func generate_map():
             elif chance > 98:
                 allTiles[x].place_feature(TileData.feature_types.FIRE)
         if allTiles[x].feature_type == null \
-            and allTiles[x].tileType != TileData.tile_types.WATER \
+            and allTiles[x].tile_type != TileData.tile_types.WATER \
             and (randi() % 100 + grid_position.x - Globals.wizard_start.x) > 90:
             var monster = monster_scene.instance()
             add_child(monster)
