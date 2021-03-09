@@ -57,7 +57,7 @@ var defs = {
         'Reveal a region of the map',
         1,
         targeting.ANYWHERE,
-        ''
+        'res://scenes/spells/FAR_SIGHT.tscn'
     ),
     spells.FIRE_BOLT: Spell.new(
         'Fire Bolt',
