@@ -3,9 +3,6 @@ extends Node
 # all the tiles in the game
 var allTiles : Array
 
-# all the tiles which have buildings on them
-var tilesWithBuildings : Array
-
 # size of a tile
 var tileSize : float = 64.0
 var dimensions : Vector2 = Vector2(19, 9)
