@@ -61,11 +61,11 @@ func get_power_per_turn():
 
 func show_tile_power(show):
     var power = get_power_per_turn()
-    $TilePower.text = '+%s' % power
+    $PowerParent/TilePower.text = '+%s' % power
     if show:
-        $TilePower.show()
+        $PowerParent/TilePower.show()
     else:
-        $TilePower.hide()
+        $PowerParent/TilePower.hide()
 
 func has_enemy():
     for monster in get_tree().get_nodes_in_group("monsters"):
