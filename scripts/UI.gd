@@ -75,3 +75,8 @@ func _on_StatsButton_pressed():
 func _on_ResearchButton_pressed():
     print('pressed research')
 
+func _on_HelpButton_pressed():
+    if $HelpDialog.visible:
+        $HelpDialog.hide()
+    else:
+        $HelpDialog.popup()
