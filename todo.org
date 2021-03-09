@@ -42,4 +42,4 @@ https://kenney.nl/assets/medieval-rts*
 * TODO attack animation or nudge thing
 * TODO help screen
 * TODO sounds
-* TODO add a recast previous spell button
+* DONE add a recast previous spell button

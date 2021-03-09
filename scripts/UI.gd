@@ -14,6 +14,12 @@ onready var game_manager : Node = get_node("/root/MainScene")
 var cast_spell_icon = preload("res://sprites/Kenney/Environment/medievalEnvironment_21.png")
 var cancel_cast_icon = preload("res://sprites/X.png")
 
+func _input(event):
+    if event.is_action_pressed('ui_spellpicker'):
+        _on_SelectCastButton_pressed()
+    elif event.is_action_pressed('ui_cast_spell'):
+        if $SpellPicker.get_node("CastSpellList").selected_spell:
+            _on_CastButton_pressed()
 
 # called when a turn is over - resets the UI
 func on_end_turn ():

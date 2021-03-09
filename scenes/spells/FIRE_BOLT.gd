@@ -3,7 +3,7 @@ extends Area2D
 var total_time = 0.0
 onready var game_manager : Node = get_node("/root/MainScene")
 var spell = SpellData.spells.FIRE_BOLT
-var start_pos = (Globals.wizard_start * 64.0)
+var start_pos = (Globals.wizard_start * 64.0) + Vector2(32, 32)
 var end_pos: Vector2
 var velocity = 500
 var direction: Vector2
@@ -11,8 +11,6 @@ var will_handle_end_of_turn = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    # adjust to get it closer to the staff
-    start_pos.y += 30
     var tile = game_manager.map.get_tile_at_position(position)
     end_pos = position
     direction = position - start_pos
