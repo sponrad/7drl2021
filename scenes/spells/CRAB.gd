@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var game_manager : Node = get_node("/root/MainScene")
-var spell = SpellData.spells.MAGIC_SPIRIT
+var spell = SpellData.spells.CRAB
 var health = SpellData.defs[spell].health
 var attack = SpellData.defs[spell].attack
 
@@ -13,7 +13,6 @@ func _ready():
 func move_to(target_tile):
     # if movable, then move there
     if target_tile.has_enemy():
-        print('yeah we go one')
         var enemy = target_tile.has_enemy()
         enemy.take_damage(attack)
         if not target_tile.has_enemy():

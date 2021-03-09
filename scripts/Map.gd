@@ -11,7 +11,6 @@ var tileSize : float = 64.0
 var dimensions : Vector2 = Vector2(19, 9)
 
 var monster_scene = load("res://scenes/Enemy.tscn")
-var monsters : Array
 var boss : Node
 
 onready var game_manager : Node = get_node("/root/MainScene")
@@ -122,7 +121,6 @@ func generate_map():
             and (randi() % 100 + grid_position.x - Globals.wizard_start.x) > 90:
             var monster = monster_scene.instance()
             add_child(monster)
-            monsters.append(monster)
             monster.position = grid_position * Vector2(64, 64)
 
 func get_visible_tiles():

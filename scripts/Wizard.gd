@@ -11,7 +11,7 @@ func _ready():
         SpellData.spells.FAR_SIGHT,
         SpellData.spells.MAGIC_SPIRIT,
         SpellData.spells.FIRE_BOLT,
-        SpellData.spells.IMP,
+        SpellData.spells.CRAB,
     ]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

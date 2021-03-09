@@ -68,14 +68,13 @@ func show_tile_power(show):
         $TilePower.hide()
 
 func has_enemy():
-    for monster in game_manager.map.monsters:
-        if monster.position == position:
+    for monster in get_tree().get_nodes_in_group("monsters"):
+        if monster.grid_position() == grid_position():
             return monster
     return false
 
 func is_moveable():
-    if has_enemy() \
-    or feature_type in [TileData.feature_types.ROCK_BROWN,
+    if feature_type in [TileData.feature_types.ROCK_BROWN,
                                         TileData.feature_types.ROCK_GRAY]:
         return false
     return true

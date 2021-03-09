@@ -1,8 +1,8 @@
 extends Node2D
 
 var current_mana : int = 1
-var mana_per_turn : int = 0
-var power_per_turn : int = 0
+var mana_per_turn : int = 1
+var power_per_turn : int = 1
 
 var current_turn : int = 1
 
@@ -31,7 +31,10 @@ func generate_monsters():
 # called when the player ends the turn
 func end_turn ():
     # update our current resource amounts
-    mana_per_turn = power_per_turn
+    var summon_upkeep = 0
+    if current_summon:
+        summon_upkeep = SpellData.defs[current_summon.spell].upkeep
+    mana_per_turn = power_per_turn - summon_upkeep
     current_mana += mana_per_turn
     # increase current turn
     current_turn += 1
@@ -58,6 +61,7 @@ func cancel_spell_cast():
 
 func cast_spell(target_tile):
     current_mana -= SpellData.defs[spell_to_cast].cost
+    #ui.update_resource_text()
     map.disable_tile_highlights()
     map.show_visible_tile_power(false)
     ui.set_casting_spell_icon(false)
@@ -66,6 +70,7 @@ func cast_spell(target_tile):
     spell.position = target_tile.position
     add_child(spell)
     currently_casting_spell = false
+    end_turn()
 
 func add_to_power_per_turn(amount):
     power_per_turn += amount

@@ -2,6 +2,7 @@ extends Area2D
 
 var total_time = 0.0
 onready var game_manager : Node = get_node("/root/MainScene")
+var spell = SpellData.spells.ENCHANT_AREA
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

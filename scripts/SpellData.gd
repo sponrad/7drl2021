@@ -12,23 +12,28 @@ enum spells {
     MAGIC_SPIRIT,
     FAR_SIGHT,
     FIRE_BOLT,
-    IMP,
+    CRAB,
 }
 
 class Spell:
     var name
     var cost
-    var upkeep # can be handled in the scene
+    var upkeep
     var description
     var targeting
     var scene_path
+    var attack
+    var health
 
-    func _init(name, description, cost, targeting, scene_path):
+    func _init(name, description, cost, targeting, scene_path, stats=null):
         self.name = name
         self.description = description
         self.cost = cost
         self.targeting = targeting
         self.scene_path = scene_path
+        self.upkeep = stats["upkeep"] if stats else 0
+        self.attack = stats["attack"] if stats else 0
+        self.health = stats["health"] if stats else 0
 
 
 var defs = {
@@ -44,7 +49,8 @@ var defs = {
         'Summon a small quick spirit that cannot attack',
         1,
         targeting.NEXT_TO_WIZARD,
-        'res://scenes/spells/MAGIC_SPIRIT.tscn'
+        'res://scenes/spells/MAGIC_SPIRIT.tscn',
+        {'upkeep': 1, 'attack': 0, 'health': 1}
     ),
     spells.FAR_SIGHT: Spell.new(
         'Far Sight',
@@ -60,11 +66,12 @@ var defs = {
         targeting.ANY_VISIBILE,
         ''
     ),
-    spells.IMP: Spell.new(
-        'Summon Imp',
-        'Summon a small demon helper',
+    spells.CRAB: Spell.new(
+        'Summon Crab',
+        'Summon a small crabby helper',
         2,
         targeting.NEXT_TO_WIZARD,
-        ''
+        'res://scenes/spells/CRAB.tscn',
+        {'upkeep': 2, 'attack': 1, 'health': 2}
     ),
 }

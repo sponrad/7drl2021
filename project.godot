@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 
 BuildingData="*res://scripts/BuildingData.gd"
 TileData="*res://scripts/TileData.gd"
+EnemyData="*res://scripts/EnemyData.gd"
 SpellData="*res://scripts/SpellData.gd"
 Globals="*res://scripts/Globals.gd"
 

@@ -25,24 +25,12 @@ func on_end_turn ():
 func update_resource_text ():
     var manaPower = ""
     # sets the text, e.g. "13 (+5)"
-    manaPower += str(game_manager.current_mana) + " (" + ("+" if game_manager.mana_per_turn >= 0 else "") + str(game_manager.mana_per_turn) + ")"
+    manaPower += str(game_manager.current_mana)
+    manaPower += " (" + ("+" if game_manager.mana_per_turn >= 0 else "")
+    manaPower += str(game_manager.mana_per_turn) + ")"
     manaPower += "\n"
     manaPower += str(game_manager.power_per_turn)
     mana_power_text.text = manaPower
-    # set the food and metal text
-#    var foodMetal = ""
-#    # sets the text, e.g. "13 (+5)"
-#    foodMetal += str(game_manager.curFood) + " (" + ("+" if game_manager.foodPerTurn >= 0 else "") + str(game_manager.foodPerTurn) + ")"
-#    foodMetal += "\n"
-#    foodMetal += str(game_manager.curMetal) + " (" + ("+" if game_manager.metalPerTurn >= 0 else "") + str(game_manager.metalPerTurn) + ")"
-#    foodMetalText.text = foodMetal
-    # set the oxygen and energy text
-#    var oxygenEnergy = ""
-#    # set the text, e.g. "13 (+5)"
-#    oxygenEnergy += str(game_manager.curOxygen) + " (" + ("+" if game_manager.oxygenPerTurn >= 0 else "") + str(game_manager.oxygenPerTurn) + ")"
-#    oxygenEnergy += "\n"
-#    oxygenEnergy += str(game_manager.curEnergy) + " (" + ("+" if game_manager.energyPerTurn >= 0 else "") + str(game_manager.energyPerTurn) + ")"
-#    oxygenEnergyText.text = oxygenEnergy
 
 # called when the "End Turn" button is pressed
 func _on_EndTurnButton_pressed ():
