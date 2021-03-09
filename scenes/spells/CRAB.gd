@@ -26,6 +26,8 @@ func move_to(target_tile):
 func take_damage(amount):
     Globals.show_damage((position + Vector2(-16, -16)), amount)
     health -= amount
+    var new_val = float(health) / float(SpellData.defs[spell].health) * 100.0
+    $HealthBar.value = new_val
     if health <= 0:
         # do an animation or something
         queue_free()

@@ -23,7 +23,7 @@ https://kenney.nl/assets/medieval-rts*
 * DONE stats
 * DONE UI for stats
 * DONE randomly place enemies on the map
-* TODO health bar on summons like crab
+* DONE health bar on summons like crab
 * DONE BUG stop enemy movement during firing of projectile
 * TODO put places of interest on the map (power boost spots!)
 * DONE damage numbers foating over when hit
