@@ -22,7 +22,7 @@ func _ready ():
     $Wizard.position = Globals.wizard_start * Vector2(64, 64)
     map.generate_map()
     # clear fog of war by the wizard
-    map.clear_player_fow()
+    map.clear_player_fov()
     ui.update_resource_text()
     ui.on_end_turn()
 

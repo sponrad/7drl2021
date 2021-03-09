@@ -121,7 +121,7 @@ func generate_map():
             add_child(monster)
             monster.position = grid_position * Vector2(64, 64)
 
-func clear_player_fow():
+func clear_player_fov():
     for tile in allTiles:
         if tile.grid_position().distance_to(Globals.wizard_start) < 2:
             tile.clear_fog()
@@ -136,3 +136,9 @@ func get_visible_tiles():
 func show_visible_tile_power(show):
     for tile in get_visible_tiles():
         tile.show_tile_power(show)
+
+func clear_fov_at_position(position, clear_range):
+    var grid_coord = Globals.position_to_grid(position)
+    for tile in allTiles:
+        if tile.grid_position().distance_to(grid_coord) <= clear_range:
+            tile.clear_fog()
