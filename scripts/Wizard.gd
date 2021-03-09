@@ -7,11 +7,11 @@ onready var game_manager : Node = get_node("/root/MainScene")
 func _ready():
     z_index = 0
     known_spells = [
-        SpellData.spells.ENCHANT_AREA,
-        SpellData.spells.FAR_SIGHT,
+        #SpellData.spells.ENCHANT_AREA,
+        #SpellData.spells.FAR_SIGHT,
         SpellData.spells.MAGIC_SPIRIT,
         SpellData.spells.FIRE_BOLT,
-        SpellData.spells.CRAB,
+        #SpellData.spells.CRAB,
     ]
 
 func _process(delta):

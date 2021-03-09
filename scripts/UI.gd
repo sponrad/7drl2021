@@ -30,7 +30,7 @@ func _input(event):
         elif get_parent().get_node("GameOver").visible:
             game_manager._on_Restart_pressed()
         else:
-            game_manager.end_turn()
+            game_manager.end_turn() # calling twice...
 
 # called when a turn is over - resets the UI
 func on_end_turn():

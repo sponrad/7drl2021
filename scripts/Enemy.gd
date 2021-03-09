@@ -52,13 +52,22 @@ func awaken():
 func take_turn():
     var target_grid_pos: Vector2
     var current_grid = Globals.position_to_grid(position)
-    if game_manager.current_summon \
-        and current_grid.distance_to(Globals.position_to_grid(game_manager.current_summon.position)) \
-            <= current_grid.distance_to(Globals.wizard_start):
+    var summon_distance = null
+    var wizard_distance = current_grid.distance_to(Globals.wizard_start)
+    var enemy
+    if game_manager.current_summon:
+        summon_distance = current_grid.distance_to(
+            Globals.position_to_grid(game_manager.current_summon.position))
+    if summon_distance and summon_distance <= wizard_distance:
         target_grid_pos = Globals.position_to_grid(game_manager.current_summon.position)
+        enemy = game_manager.current_summon
     else:
         target_grid_pos = Globals.wizard_start
-    # ranged chars do range check here
+        enemy = game_manager.get_node('Wizard')
+    if EnemyData.defs[type].attack_range >= target_grid_pos.distance_to(current_grid):
+        print('performing a.. RANGED ATTACK')
+        enemy.take_damage(attack)
+        return
     var most_desired_direction = current_grid.direction_to(target_grid_pos)
     var desired_directions = []
     if abs(most_desired_direction.x) > abs(most_desired_direction.y):

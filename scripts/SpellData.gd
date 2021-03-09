@@ -40,14 +40,14 @@ var defs = {
     spells.ENCHANT_AREA: Spell.new(
         'Enchant Tile',
         'Enchant the chosen map tile, gaining the tiles power',
-        1,
+        10,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/ENCHANT_AREA.tscn'
     ),
     spells.MAGIC_SPIRIT: Spell.new(
         'Summon Magic Spirit',
         'Summon a small quick spirit that cannot attack',
-        1,
+        2,
         targeting.NEXT_TO_WIZARD,
         'res://scenes/spells/MAGIC_SPIRIT.tscn',
         {'upkeep': 1, 'attack': 0, 'health': 1}
@@ -55,14 +55,14 @@ var defs = {
     spells.FAR_SIGHT: Spell.new(
         'Far Sight',
         'Reveal a region of the map',
-        1,
+        20,
         targeting.ANYWHERE,
         'res://scenes/spells/FAR_SIGHT.tscn'
     ),
     spells.FIRE_BOLT: Spell.new(
         'Fire Bolt',
         'Shoot a bolt of slightly intense flame at a single target',
-        1,
+        2,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/FIRE_BOLT.tscn',
         {'upkeep': 0, 'attack': 1, 'health': 0}
@@ -70,7 +70,7 @@ var defs = {
     spells.CRAB: Spell.new(
         'Summon Crab',
         'Summon a small crabby helper',
-        2,
+        5,
         targeting.NEXT_TO_WIZARD,
         'res://scenes/spells/CRAB.tscn',
         {'upkeep': 2, 'attack': 1, 'health': 2}

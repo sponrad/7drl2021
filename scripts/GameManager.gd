@@ -1,6 +1,6 @@
 extends Node2D
 
-var current_mana : int = 1
+var current_mana : int = 2
 var mana_per_turn : int = 1
 var power_per_turn : int = 1
 
