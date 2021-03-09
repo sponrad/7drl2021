@@ -10,6 +10,7 @@ var direction: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    # adjust to get it closer to the staff
     start_pos.y += 30
     var tile = game_manager.map.get_tile_at_position(position)
     end_pos = position
