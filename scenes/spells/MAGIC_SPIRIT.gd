@@ -29,4 +29,5 @@ func take_damage(amount):
     $HealthBar.value = new_val
     if health <= 0:
         # do an animation or something
+        game_manager.map.disable_tile_highlights()
         queue_free()

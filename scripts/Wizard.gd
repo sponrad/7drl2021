@@ -1,10 +1,8 @@
 extends Area2D
 
-
 var known_spells: Array = []
+var is_casting = false
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
     known_spells = [
         SpellData.spells.ENCHANT_AREA,
@@ -14,6 +12,13 @@ func _ready():
         SpellData.spells.CRAB,
     ]
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass
+func _process(delta):
+    if is_casting:
+        $CastingSwirl.rotate(delta * 1.5)
+
+func set_casting(casting):
+    is_casting = casting
+    if casting:
+        $CastingSwirl.show()
+    else:
+        $CastingSwirl.hide()

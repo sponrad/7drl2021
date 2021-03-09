@@ -55,10 +55,11 @@ func end_turn ():
             monster.take_turn()
     ui.update_resource_text()
     ui.on_end_turn()
-    if current_summon:
+    if current_summon and current_summon.health > 0:
         start_move_summon()
 
 func on_select_spell(spell):
+    $Wizard.set_casting(true)
     if (current_mana < SpellData.defs[spell].cost):
         ui.set_casting_spell_icon(false)
         #message!
@@ -71,6 +72,7 @@ func on_select_spell(spell):
     map.highlight_available_tiles()
 
 func cancel_spell_cast():
+    $Wizard.set_casting(false)
     currently_casting_spell = false
     map.disable_tile_highlights()
     map.show_visible_tile_power(false)
@@ -89,6 +91,7 @@ func cast_spell(target_tile):
     spell.position = target_tile.position
     add_child(spell)
     currently_casting_spell = false
+    $Wizard.set_casting(false)
     if spell.get('will_handle_end_of_turn') == null:
         end_turn()
     else:
