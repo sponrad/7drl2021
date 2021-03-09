@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Wizard.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/Wizard.gd" type="Script" id=6]
+[ext_resource path="res://font/Roboto-Regular.tres" type="DynamicFont" id=7]
+[ext_resource path="res://font/Roboto-Bold.tres" type="DynamicFont" id=8]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 4 )
@@ -564,3 +566,36 @@ z_as_relative = false
 
 [node name="UI" parent="UIZINDEX" instance=ExtResource( 2 )]
 margin_bottom = 576.0
+
+[node name="StartSplash" type="Control" parent="UIZINDEX"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UIZINDEX/StartSplash"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 204.0
+margin_top = 256.0
+margin_right = 1036.0
+margin_bottom = 432.0
+custom_fonts/normal_font = ExtResource( 8 )
+text = "  ARCANE ISLAND"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="UIZINDEX/StartSplash"]
+margin_left = 360.0
+margin_top = 597.0
+margin_right = 864.0
+margin_bottom = 701.0
+custom_fonts/font = ExtResource( 7 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="UIZINDEX/StartSplash/StartButton" to="UIZINDEX/UI" method="_on_StartButton_pressed"]

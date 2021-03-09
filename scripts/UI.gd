@@ -14,6 +14,10 @@ onready var game_manager : Node = get_node("/root/MainScene")
 var cast_spell_icon = preload("res://sprites/Kenney/Environment/medievalEnvironment_21.png")
 var cancel_cast_icon = preload("res://sprites/X.png")
 
+func _ready():
+    hide()
+    get_parent().get_node("StartSplash").show()
+
 func _input(event):
     if event.is_action_pressed('ui_spellpicker'):
         _on_SelectCastButton_pressed()
@@ -80,3 +84,8 @@ func _on_HelpButton_pressed():
         $HelpDialog.hide()
     else:
         $HelpDialog.popup()
+
+func _on_StartButton_pressed():
+    game_manager.start()
+    show()
+    get_parent().get_node("StartSplash").hide()

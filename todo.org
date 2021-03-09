@@ -37,9 +37,10 @@ https://kenney.nl/assets/medieval-rts*
 * TODO research new spells
 * TODO spells spells spells
 * DONE fog of war
-* TODO title screen
+* DONE title screen
+* TODO game over screen
 * TODO corpses
 * TODO attack animation or nudge thing
-* TODO help screen
+* DONE help screen
 * TODO sounds
 * DONE add a recast previous spell button
