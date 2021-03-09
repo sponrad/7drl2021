@@ -17,8 +17,6 @@ func move_to(target_tile):
         print('yeah we go one')
         var enemy = target_tile.has_enemy()
         enemy.take_damage(attack)
-        if not target_tile.has_enemy():
-            position = target_tile.position
     elif target_tile.is_moveable():
         position = target_tile.position
     game_manager.map.clear_fov_at_position(position, 2)

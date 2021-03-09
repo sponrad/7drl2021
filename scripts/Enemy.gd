@@ -77,8 +77,6 @@ func move_to(target_tile):
             == target_tile.grid_position():
         var enemy = game_manager.current_summon
         enemy.take_damage(attack)
-        if not game_manager.current_summon:
-            position = target_tile.position - Vector2(32, 32)
     elif target_tile.grid_position() == Globals.wizard_start:
         print('holy cow I think it is over')
     elif target_tile.is_moveable():
@@ -86,12 +84,8 @@ func move_to(target_tile):
 
 func take_damage(amount):
     Globals.show_damage((position + Vector2(24, 0)), amount)
-    print('enemy taking damage %s of %s' % [amount, health])
     awaken()
     health -= amount
-    var max_health = EnemyData.defs[type].health
-    print(health)
-    var new_val = float(health) / float(max_health) * 100.0
-    $HealthBar.value = new_val
+    $HealthBar.value = float(health) / float(EnemyData.defs[type].health) * 100.0
     if health <= 0:
         queue_free()

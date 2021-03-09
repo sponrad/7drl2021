@@ -57,6 +57,7 @@ func _on_SelectCastButton_pressed():
         game_manager.cancel_spell_cast()
     else:
         $SpellPicker.popup()
+        game_manager.map.disable_tile_highlights()
     $SpellPicker.get_node('CastSpellList').populate_spells(game_manager.get_node('Wizard').known_spells)
 
 func _on_CastButton_pressed():

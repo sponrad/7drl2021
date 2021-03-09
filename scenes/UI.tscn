@@ -100,7 +100,7 @@ margin_bottom = 108.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 text = "325 (+20)
-+60"
+60"
 __meta__ = {
 "_edit_use_anchors_": false
 }

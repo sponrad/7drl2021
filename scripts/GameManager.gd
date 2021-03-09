@@ -55,6 +55,8 @@ func end_turn ():
             monster.take_turn()
     ui.update_resource_text()
     ui.on_end_turn()
+    if current_summon:
+        start_move_summon()
 
 func on_select_spell(spell):
     if (current_mana < SpellData.defs[spell].cost):
@@ -64,6 +66,7 @@ func on_select_spell(spell):
     if (spell == SpellData.spells.ENCHANT_AREA):
         map.show_visible_tile_power(true)
     currently_casting_spell = true
+    currently_moving_summon = false
     spell_to_cast = spell
     map.highlight_available_tiles()
 
@@ -97,6 +100,7 @@ func add_to_power_per_turn(amount):
     ui.update_resource_text()
 
 func start_move_summon():
+    map.disable_tile_highlights()
     currently_moving_summon = true
     map.highlight_available_tiles()
 
@@ -104,4 +108,3 @@ func move_summon(target_tile):
     if paused:
         return
     current_summon.move_to(target_tile)
-    map.disable_tile_highlights()
