@@ -43,7 +43,8 @@ func highlight_available_tiles ():
                 tile.toggle_highlight(true)
         elif targeting == SpellData.targeting.ANY_VISIBILE:
             for tile in allTiles:
-                if tile.grid_position() == Globals.wizard_start:
+                if tile.grid_position() == Globals.wizard_start \
+                    or tile.fog_of_war == true:
                     continue
                 tile.toggle_highlight(true)
         elif targeting == SpellData.targeting.NEXT_TO_WIZARD:
@@ -119,6 +120,11 @@ func generate_map():
             var monster = monster_scene.instance()
             add_child(monster)
             monster.position = grid_position * Vector2(64, 64)
+
+func clear_player_fow():
+    for tile in allTiles:
+        if tile.grid_position().distance_to(Globals.wizard_start) < 2:
+            tile.clear_fog()
 
 func get_visible_tiles():
     var ret = []

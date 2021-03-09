@@ -4,7 +4,7 @@ extends Area2D
 var can_target : bool = false
 var tile_type : int = TileData.tile_types.SAND
 var feature_type = null
-var fog_of_war = false
+var fog_of_war = true
 
 # components
 onready var highlight : Sprite = get_node("Highlight")
@@ -78,3 +78,7 @@ func is_moveable():
                                         TileData.feature_types.ROCK_GRAY]:
         return false
     return true
+
+func clear_fog():
+    fog_of_war = false
+    $FogOfWar.clear_fog()

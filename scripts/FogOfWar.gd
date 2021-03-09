@@ -11,6 +11,6 @@ func _ready():
     pass # Replace with function body.
 
 
-func show():
+func clear_fog():
     for cloud in self.get_children():
         cloud.fade_off()

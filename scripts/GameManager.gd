@@ -13,7 +13,7 @@ var current_summon
 var currently_moving_summon: bool = false
 
 # components
-onready var ui : Node = get_node("UI")
+onready var ui : Node = get_node("UIZINDEX/UI")
 onready var map : Node = get_node("Tiles")
 
 
@@ -21,12 +21,10 @@ func _ready ():
     randomize()
     $Wizard.position = Globals.wizard_start * Vector2(64, 64)
     map.generate_map()
-    # update the UI when the game rstarts
+    # clear fog of war by the wizard
+    map.clear_player_fow()
     ui.update_resource_text()
     ui.on_end_turn()
-
-func generate_monsters():
-    pass
 
 # called when the player ends the turn
 func end_turn ():

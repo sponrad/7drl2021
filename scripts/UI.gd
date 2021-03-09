@@ -22,7 +22,7 @@ func on_end_turn ():
     actionButtons.visible = true
 
 # updates the resource text to show the current values
-func update_resource_text ():
+func update_resource_text():
     var manaPower = ""
     # sets the text, e.g. "13 (+5)"
     manaPower += str(game_manager.current_mana)

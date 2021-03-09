@@ -13,7 +13,8 @@ func _ready():
     var angle = randf() * 2 * PI
     fade_direction = Vector2(cos(angle), -1)
     start_pos = position
-    z_index = randi() % 10
+    z_index = (randi() % 10) * -1
+    position.y += (randi() % 6) - 3
 
 func _process(delta):
     if fading_off:
