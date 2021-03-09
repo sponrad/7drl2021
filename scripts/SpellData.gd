@@ -64,7 +64,8 @@ var defs = {
         'Shoot a bolt of slightly intense flame at a single target',
         1,
         targeting.ANY_VISIBILE,
-        ''
+        'res://scenes/spells/FIRE_BOLT.tscn',
+        {'upkeep': 0, 'attack': 1, 'health': 0}
     ),
     spells.CRAB: Spell.new(
         'Summon Crab',
