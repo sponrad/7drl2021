@@ -78,7 +78,7 @@ func move_to(target_tile):
         var enemy = game_manager.current_summon
         enemy.take_damage(attack)
     elif target_tile.grid_position() == Globals.wizard_start:
-        print('holy cow I think it is over')
+        game_manager.get_node('Wizard').take_damage(attack)
     elif target_tile.is_moveable():
         position = target_tile.position - Vector2(32, 32)
 

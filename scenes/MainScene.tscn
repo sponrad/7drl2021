@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=3]
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Wizard.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scripts/Wizard.gd" type="Script" id=6]
 [ext_resource path="res://font/Roboto-Regular.tres" type="DynamicFont" id=7]
 [ext_resource path="res://font/Roboto-Bold.tres" type="DynamicFont" id=8]
 
@@ -558,7 +557,6 @@ position = Vector2( 1248, 544 )
 [node name="Wizard" parent="." instance=ExtResource( 5 )]
 position = Vector2( 64, 256 )
 z_index = 0
-script = ExtResource( 6 )
 
 [node name="UIZINDEX" type="Node2D" parent="."]
 z_index = 100
@@ -598,4 +596,37 @@ text = "START"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GameOver" type="Control" parent="UIZINDEX"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UIZINDEX/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 220.0
+margin_top = 192.0
+margin_right = 1052.0
+margin_bottom = 368.0
+custom_fonts/normal_font = ExtResource( 8 )
+text = "      GAME OVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="UIZINDEX/GameOver"]
+margin_left = 376.0
+margin_top = 360.0
+margin_right = 880.0
+margin_bottom = 464.0
+custom_fonts/font = ExtResource( 7 )
+text = "RESTART"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="UIZINDEX/StartSplash/StartButton" to="UIZINDEX/UI" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="UIZINDEX/GameOver/Restart" to="." method="_on_Restart_pressed"]

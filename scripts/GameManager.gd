@@ -111,3 +111,9 @@ func move_summon(target_tile):
     if paused:
         return
     current_summon.move_to(target_tile)
+
+func game_over():
+    $UIZINDEX/GameOver.show()
+
+func _on_Restart_pressed():
+    get_tree().reload_current_scene()

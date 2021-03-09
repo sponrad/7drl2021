@@ -24,9 +24,16 @@ func _input(event):
     elif event.is_action_pressed('ui_cast_spell'):
         if $SpellPicker.get_node("CastSpellList").selected_spell:
             _on_CastButton_pressed()
+    elif event.is_action_pressed('ui_select'):
+        if get_parent().get_node("StartSplash").visible:
+            _on_StartButton_pressed()
+        elif get_parent().get_node("GameOver").visible:
+            game_manager._on_Restart_pressed()
+        else:
+            game_manager.end_turn()
 
 # called when a turn is over - resets the UI
-func on_end_turn ():
+func on_end_turn():
     # update the cur turn text and enable the building buttons
     curTurnText.text = "Turn: " + str(game_manager.current_turn)
     actionButtons.visible = true

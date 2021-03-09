@@ -186,6 +186,7 @@ text = "Commands
 
 Z - opens and closes the spell select window
 C - recasts your last spell
+Space - end turn, and confirm for start and restart game
 
 Mouse/touch for everything else"
 __meta__ = {

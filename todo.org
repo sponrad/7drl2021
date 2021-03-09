@@ -38,7 +38,7 @@ https://kenney.nl/assets/medieval-rts*
 * TODO spells spells spells
 * DONE fog of war
 * DONE title screen
-* TODO game over screen
+* DONE game over screen
 * TODO corpses
 * TODO attack animation or nudge thing
 * DONE help screen
