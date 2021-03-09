@@ -7,6 +7,7 @@ var start_pos = (Globals.wizard_start * 64.0)
 var end_pos: Vector2
 var velocity = 500
 var direction: Vector2
+var will_handle_end_of_turn = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,7 @@ func _ready():
     direction = position - start_pos
     rotation = direction.angle() - 0.5 * PI
     position = start_pos
+    game_manager.set_paused(true)
 
 func destroy(pos):
     # remove the power from the globals
@@ -39,4 +41,6 @@ func _process(delta):
             enemy.take_damage(
                 SpellData.defs[SpellData.spells.FIRE_BOLT].attack
             )
+        game_manager.set_paused(false)
+        game_manager.end_turn()
         queue_free()

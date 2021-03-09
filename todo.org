@@ -24,7 +24,7 @@ https://kenney.nl/assets/medieval-rts*
 * DONE UI for stats
 * DONE randomly place enemies on the map
 * TODO health bar on summons like crab
-* TODO BUG stop enemy movement during firing of projectile
+* DONE BUG stop enemy movement during firing of projectile
 * TODO put places of interest on the map (power boost spots!)
 * DONE damage numbers foating over when hit
 * DONE enemy movement toward wizard or nearest summon (to attack it)
@@ -38,6 +38,7 @@ https://kenney.nl/assets/medieval-rts*
 * TODO spells spells spells
 * DONE fog of war
 * TODO title screen
+* TODO corpses
 * TODO attack animation or nudge thing
 * TODO help screen
 * TODO sounds
