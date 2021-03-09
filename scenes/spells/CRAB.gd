@@ -24,6 +24,7 @@ func move_to(target_tile):
     game_manager.end_turn()
 
 func take_damage(amount):
+    Globals.show_damage((position + Vector2(-16, -16)), amount)
     health -= amount
     if health <= 0:
         # do an animation or something

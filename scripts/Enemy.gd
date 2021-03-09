@@ -85,6 +85,7 @@ func move_to(target_tile):
         position = target_tile.position - Vector2(32, 32)
 
 func take_damage(amount):
+    Globals.show_damage((position + Vector2(24, 0)), amount)
     print('enemy taking damage %s of %s' % [amount, health])
     awaken()
     health -= amount

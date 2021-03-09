@@ -26,10 +26,10 @@ https://kenney.nl/assets/medieval-rts*
 * TODO health bar on summons like crab
 * TODO BUG stop enemy movement during firing of projectile
 * TODO put places of interest on the map (power boost spots!)
+* DONE damage numbers foating over when hit
 * DONE enemy movement toward wizard or nearest summon (to attack it)
 * TODO enemies drop goods (but how do you get them)
 * TODO spells to learn (randomized list of more powerful spells)
-* TODO adjust learn vs mana generation
 * TODO end goal, defeat some powerful thing or cast mastery
 * DONE death if wizard is hit
 * TODO enemy wizard...
@@ -38,6 +38,7 @@ https://kenney.nl/assets/medieval-rts*
 * TODO spells spells spells
 * DONE fog of war
 * TODO title screen
+* TODO attack animation or nudge thing
 * TODO help screen
 * TODO sounds
 * TODO add a recast previous spell button
