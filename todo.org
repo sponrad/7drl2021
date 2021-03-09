@@ -24,12 +24,12 @@ https://kenney.nl/assets/medieval-rts*
 * DONE UI for stats
 * DONE randomly place enemies on the map
 * TODO put places of interest on the map (power boost spots!)
-* TODO enemy movement toward wizard or nearest summon (to attack it)
+* DONE enemy movement toward wizard or nearest summon (to attack it)
 * TODO enemies drop goods (but how do you get them)
 * TODO spells to learn (randomized list of more powerful spells)
 * TODO adjust learn vs mana generation
 * TODO end goal, defeat some powerful thing or cast mastery
-* TODO death if wizard is hit
+* DONE death if wizard is hit
 * TODO enemy wizard...
 * TODO power allocation per turn, mana vs spell research
 * TODO research new spells

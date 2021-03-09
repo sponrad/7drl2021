@@ -36,7 +36,9 @@ func end_turn ():
     current_mana += mana_per_turn
     # increase current turn
     current_turn += 1
-    # update the UI
+    for monster in get_tree().get_nodes_in_group("monsters"):
+        if monster.awake:
+            monster.take_turn()
     ui.update_resource_text()
     ui.on_end_turn()
 
