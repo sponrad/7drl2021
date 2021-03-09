@@ -230,6 +230,14 @@ tile_set = SubResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 131073 )
 
+[node name="RedDemonCorpse" type="TileMap" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2( 20, 20 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 720896 )
+
 [node name="PurpleMage" type="TileMap" parent="."]
 visible = false
 use_parent_material = true
@@ -237,6 +245,14 @@ position = Vector2( 20, 20 )
 tile_set = SubResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 393227 )
+
+[node name="PurpleMageCorpse" type="TileMap" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2( 20, 20 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 720909 )
 
 [node name="BlueBlob" type="TileMap" parent="."]
 visible = false
@@ -246,6 +262,14 @@ tile_set = SubResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 655374 )
 
+[node name="BlueBlobCorpse" type="TileMap" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2( 20, 20 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 720903 )
+
 [node name="OrangeSkel" type="TileMap" parent="."]
 visible = false
 use_parent_material = true
@@ -253,6 +277,14 @@ position = Vector2( 20, 20 )
 tile_set = SubResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 655368 )
+
+[node name="OrangeSkelCorpse" type="TileMap" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2( 20, 20 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 720914 )
 
 [node name="AsleepText" type="Label" parent="."]
 margin_left = 32.0

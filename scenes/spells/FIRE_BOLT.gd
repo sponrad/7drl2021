@@ -32,7 +32,6 @@ func grid_position(pos):
 func _process(delta):
     position += direction.normalized() * velocity * delta
     if grid_position(position) == grid_position(end_pos):
-        print('we made it!!')
         var tile = game_manager.map.get_tile_at_coords(grid_position(position))
         var enemy = tile.has_enemy()
         if enemy:

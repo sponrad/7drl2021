@@ -1,6 +1,7 @@
 extends Area2D
 
 var typeTileMaps = {}
+var typeCorpseTileMaps = {}
 var type: int = EnemyData.types.SKELETON
 var awake = false
 # these get updated down in _ready
@@ -16,6 +17,12 @@ func _ready():
         EnemyData.types.MAGE: $PurpleMage,
         EnemyData.types.BLOB: $BlueBlob,
         EnemyData.types.SKELETON: $OrangeSkel,
+    }
+    typeCorpseTileMaps = {
+        EnemyData.types.DEMON: $RedDemonCorpse,
+        EnemyData.types.MAGE: $PurpleMageCorpse,
+        EnemyData.types.BLOB: $BlueBlobCorpse,
+        EnemyData.types.SKELETON: $OrangeSkelCorpse,
     }
     var chance = randi() % 100
     if chance > 50 and chance < 75:
@@ -88,4 +95,9 @@ func take_damage(amount):
     health -= amount
     $HealthBar.value = float(health) / float(EnemyData.defs[type].health) * 100.0
     if health <= 0:
-        queue_free()
+        awake = false
+        $HealthBar.hide()
+        remove_from_group('monsters')
+        for tilemap in typeTileMaps.values():
+            tilemap.hide()
+        typeCorpseTileMaps[type].show()

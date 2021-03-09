@@ -39,8 +39,9 @@ https://kenney.nl/assets/medieval-rts*
 * DONE fog of war
 * DONE title screen
 * DONE game over screen
-* TODO corpses
+* DONE corpses
 * TODO attack animation or nudge thing
 * DONE help screen
 * TODO sounds
 * DONE add a recast previous spell button
+* TODO export
