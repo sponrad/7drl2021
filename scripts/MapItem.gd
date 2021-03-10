@@ -19,7 +19,6 @@ func _ready():
         spell_type = ItemData.find_unique_spell(
             game_manager.get_node('Wizard'))
         if not spell_type:
-            print('did not find a valid spell book')
             type = ItemData.types.POWER_INC
     for tilemap in typeTileMaps.values():
         tilemap.hide()
@@ -38,3 +37,7 @@ func gain_item():
         pass
     # TODO show some text of what on earth is happening
     queue_free()
+
+func _on_MapItem_area_shape_entered(area_id, area, area_shape, self_shape):
+    print('HEY WE"VE ENTERED HERE')
+    gain_item()

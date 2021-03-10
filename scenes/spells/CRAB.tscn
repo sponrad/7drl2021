@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/spells/CRAB.gd" type="Script" id=1]
 [ext_resource path="res://sprites/urizen_tiles.png" type="Texture" id=2]
@@ -216,6 +216,9 @@
 9/shapes = [  ]
 9/z_index = 0
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 16.2872
+
 [node name="Crab" type="Area2D"]
 script = ExtResource( 1 )
 
@@ -238,3 +241,7 @@ texture_progress = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4.48985, 6.03323 )
+shape = SubResource( 2 )
