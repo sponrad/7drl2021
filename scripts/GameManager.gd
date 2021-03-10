@@ -119,6 +119,9 @@ func move_summon(target_tile):
 func game_over():
     $UIZINDEX/GameOver.show()
 
+func win():
+    print('hey you did it')
+
 func _on_Restart_pressed():
     get_tree().reload_current_scene()
 

@@ -88,6 +88,13 @@ var defs = {
         1,
         targeting.ITEM,
         'res://scenes/spells/TELEPORT_ITEM.tscn'
+    ),
+    spells.SPELL_OF_MASTERY: Spell.new(
+        'Spell of Mastery',
+        'You win no questions asked',
+        50,
+        targeting.ANYWHERE,
+        'res://scenes/spells/MASTERY.tscn'
     )
 }
 
