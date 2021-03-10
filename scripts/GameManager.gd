@@ -37,16 +37,20 @@ func set_paused(pause):
     print('setting paused to %s' % pause)
     paused = pause
 
+func update_per_turn_numbers():
+    # but dont update actual counts of anything
+    # update our current resource amounts
+    var summon_upkeep = 0
+    if current_summon and current_summon.health > 0:
+        summon_upkeep = SpellData.defs[current_summon.spell].upkeep
+    mana_per_turn = power_per_turn - summon_upkeep
+
 # called when the player ends the turn
 func end_turn ():
     if paused:
         # someone better unpause us!
         return
-    # update our current resource amounts
-    var summon_upkeep = 0
-    if current_summon:
-        summon_upkeep = SpellData.defs[current_summon.spell].upkeep
-    mana_per_turn = power_per_turn - summon_upkeep
+    update_per_turn_numbers()
     current_mana += mana_per_turn
     # increase current turn
     current_turn += 1

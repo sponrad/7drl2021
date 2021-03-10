@@ -105,5 +105,7 @@ func summon_take_damage(summon, amount):
     summon.get_node('HealthBar').value = new_val
     if summon.health <= 0:
         # do an animation or something
-        summon.game_manager.map.disable_tile_highlights()
+        var game_manager = summon.game_manager
+        game_manager.map.disable_tile_highlights()
         summon.queue_free()
+        game_manager.update_per_turn_numbers()
