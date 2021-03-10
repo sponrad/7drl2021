@@ -628,5 +628,38 @@ text = "RESTART"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Win" type="Control" parent="UIZINDEX"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UIZINDEX/Win"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 220.0
+margin_top = 192.0
+margin_right = 1052.0
+margin_bottom = 368.0
+custom_fonts/normal_font = ExtResource( 8 )
+text = "  Congratulations!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="UIZINDEX/Win"]
+margin_left = 376.0
+margin_top = 360.0
+margin_right = 880.0
+margin_bottom = 464.0
+custom_fonts/font = ExtResource( 7 )
+text = "RESTART"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="UIZINDEX/StartSplash/StartButton" to="UIZINDEX/UI" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="UIZINDEX/GameOver/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="UIZINDEX/Win/Restart" to="." method="_on_Restart_pressed"]

@@ -120,10 +120,12 @@ func game_over():
     $UIZINDEX/GameOver.show()
 
 func win():
-    print('hey you did it')
+    $UIZINDEX/Win.show()
 
 func _on_Restart_pressed():
     get_tree().reload_current_scene()
+    $UIZINDEX/Win.hide()
+    $UIZINDEX/GameOver.hide()
 
 func spawn_item(grid_pos):
     # need to intelligently put an item here,
