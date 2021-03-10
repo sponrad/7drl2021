@@ -5,6 +5,7 @@ enum types {
     MAGE,
     BLOB,
     SKELETON,
+    KRAKEN,
 }
 
 class Enemy:
@@ -22,4 +23,5 @@ var defs = {
     types.MAGE: Enemy.new(3, 3, 3),
     types.BLOB: Enemy.new(2, 2, 0),
     types.SKELETON: Enemy.new(1, 2, 0),
+    types.KRAKEN: Enemy.new(5, 125, 2),
 }

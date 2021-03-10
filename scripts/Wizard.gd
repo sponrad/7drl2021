@@ -10,10 +10,10 @@ func _ready():
     z_index = 0
     known_spells = [
         #SpellData.spells.ENCHANT_AREA,
-        SpellData.spells.FAR_SIGHT,
+        #SpellData.spells.FAR_SIGHT,
         SpellData.spells.MAGIC_SPIRIT,
         SpellData.spells.FIRE_BOLT,
-        #SpellData.spells.VOID_RAY,
+        #SpellData.spells.SPELL_OF_MASTERY,
         #SpellData.spells.LIGHTNING
     ]
     # start with some learnable spells

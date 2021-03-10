@@ -43,7 +43,7 @@
 ** spell node that can be enchanted for long term power (if you know enchant)
 * DONE spells to learn (randomized list of more powerful spells)
 * DONE end goal, defeat some powerful thing or cast mastery
-* TODO enemy wizard...
+* DONE enemy wizard...
 * DONE power allocation per turn, mana vs spell research
 * DONE remove the stats UI page
 * DONE research new spells

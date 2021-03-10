@@ -7,8 +7,8 @@ var allTiles : Array
 var tileSize : float = 64.0
 var dimensions : Vector2 = Vector2(19, 9)
 
-var monster_scene = load("res://scenes/Enemy.tscn")
-var boss : Node
+var monster_scene = preload("res://scenes/Enemy.tscn")
+var boss_scene = preload("res://scenes/BossEnemy.tscn")
 
 onready var game_manager : Node = get_node("/root/MainScene")
 
@@ -136,6 +136,15 @@ func generate_map():
             and allTiles[x].is_moveable() \
             and allTiles[x].tile_type != TileData.tile_types.WATER:
             game_manager.spawn_item(grid_position)
+    # spawn the boss on a random tile on the last row, replace feature and enemy if they were there
+    var boss_coord = Vector2(18, randi() % 8 + 1)
+    var tile = get_tile_at_coords(boss_coord)
+    if tile.has_enemy():
+        tile.has_enemy().queue_free()
+    tile.clear_feature()
+    var boss = boss_scene.instance()
+    boss.position = Globals.grid_to_position(boss_coord)
+    add_child(boss)
 
 func clear_player_fov():
     for tile in allTiles:

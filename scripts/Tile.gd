@@ -34,6 +34,9 @@ func place_feature(new_type):
     var feature_sprites = TileData.feature_type_sprites[feature_type]
     featureIcon.texture = feature_sprites[randi() % len(feature_sprites)]
 
+func clear_feature():
+    feature_type = null
+    featureIcon.texture = null
 
 func grid_position():
     return Vector2(
