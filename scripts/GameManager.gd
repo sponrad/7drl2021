@@ -127,8 +127,8 @@ func spawn_item(grid_pos):
     # items can be on top of some otherwise inaccessible features
     # for tomes we dont want to duplicate spells available in tomes, so track them
     # we also dont want to spawn a tome for a spell that the wizard already has access to
-    print('spawning item at %s' % grid_pos)
     var item = ItemData.mapitem_scene.instance()
     item.position = Globals.grid_to_position(grid_pos)
     add_child(item)
+    print('spawned item %s at %s' % [item.get_name(), grid_pos])
 

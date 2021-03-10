@@ -50,6 +50,16 @@ func _process(delta):
 func gain_item():
     set_process(true)
 
+func get_name():
+    if type == ItemData.types.SPELLBOOK:
+        return "spell: %s" % SpellData.defs[spell_type].name
+    elif type == ItemData.types.POWER_INC:
+        return "Power +1"
+    elif type == ItemData.types.MANA_INC:
+        return "Mana +5"
+    elif type == ItemData.types.POWER:
+        return "Research +10"
+
 func get_item_effect():
     var message = ""
     if type == ItemData.types.SPELLBOOK:
