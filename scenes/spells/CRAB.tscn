@@ -228,10 +228,10 @@ format = 1
 tile_data = PoolIntArray( 0, 6, 7 )
 
 [node name="HealthBar" type="TextureProgress" parent="."]
-margin_left = -20.25
-margin_top = -31.5
-margin_right = 43.75
-margin_bottom = -21.5
+margin_left = -18.75
+margin_top = -28.25
+margin_right = 45.25
+margin_bottom = -18.25
 rect_scale = Vector2( 0.75, 0.75 )
 value = 100.0
 texture_progress = ExtResource( 3 )

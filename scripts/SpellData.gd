@@ -59,7 +59,7 @@ var defs = {
     ),
     spells.MAGIC_SPIRIT: Spell.new(
         'Summon Magic Spirit',
-        'Summon a small quick spirit that cannot attack',
+        'Summon a small quick spirit that cannot attack. It can scout and pick up items though, a great little thing.',
         2,
         4,
         targeting.NEXT_TO_WIZARD,

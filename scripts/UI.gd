@@ -29,8 +29,6 @@ func _input(event):
             _on_StartButton_pressed()
         elif get_parent().get_node("GameOver").visible:
             game_manager._on_Restart_pressed()
-        else:
-            game_manager.end_turn() # calling twice...
 
 # called when a turn is over - resets the UI
 func on_end_turn():
@@ -44,7 +42,7 @@ func update_resource_text():
     # sets the text, e.g. "13 (+5)"
     manaPower += str(game_manager.current_mana)
     manaPower += " (" + ("+" if game_manager.mana_per_turn >= 0 else "")
-    manaPower += str(game_manager.mana_per_turn) + ")"
+    manaPower += str(game_manager.mana_per_turn) + " per turn)"
     manaPower += "\n"
     manaPower += str(game_manager.power_per_turn)
     mana_power_text.text = manaPower

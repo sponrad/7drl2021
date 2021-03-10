@@ -35,10 +35,10 @@ __meta__ = {
 }
 
 [node name="TurnText" type="Label" parent="."]
-margin_left = 878.0
-margin_top = 56.0
-margin_right = 1021.0
-margin_bottom = 92.0
+margin_left = 865.0
+margin_top = 50.0
+margin_right = 1008.0
+margin_bottom = 86.0
 custom_fonts/font = ExtResource( 2 )
 text = "Turn 257"
 __meta__ = {
@@ -47,9 +47,9 @@ __meta__ = {
 
 [node name="ActionButtons" type="HBoxContainer" parent="."]
 margin_left = 34.0
-margin_top = 8.0
+margin_top = 18.0
 margin_right = 384.0
-margin_bottom = 120.0
+margin_bottom = 130.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -75,10 +75,10 @@ text = "HELP"
 expand_icon = true
 
 [node name="HeaderManaPower" type="Label" parent="."]
-margin_left = 452.0
-margin_top = 32.0
-margin_right = 567.0
-margin_bottom = 107.0
+margin_left = 384.0
+margin_top = 24.0
+margin_right = 499.0
+margin_bottom = 111.0
 custom_fonts/font = ExtResource( 2 )
 text = "Mana:
 Power:"
@@ -87,10 +87,10 @@ __meta__ = {
 }
 
 [node name="ManaPowerText" type="Label" parent="."]
-margin_left = 607.0
-margin_top = 33.0
-margin_right = 865.0
-margin_bottom = 108.0
+margin_left = 528.0
+margin_top = 24.0
+margin_right = 786.0
+margin_bottom = 111.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 text = "325 (+20)
