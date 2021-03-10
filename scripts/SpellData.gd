@@ -113,7 +113,7 @@ var defs = {
         40,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/LIGHTNING.tscn',
-        {'upkeep': 0, 'attack': 3, 'health': 0}
+        {'upkeep': 0, 'attack': 2, 'health': 0}
     ),
     spells.SPIDER: Spell.new(
         'Summon Giant Armored Spider',
