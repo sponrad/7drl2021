@@ -53,7 +53,7 @@
 ** DONE another stronger summon
 ** DONE stronger single target
 ** TODO wall spell
-** TODO roots
+** DONE roots
 ** TODO magic sheild to take some hits
 ** DONE mastery
 * TODO attack animation or nudge thing

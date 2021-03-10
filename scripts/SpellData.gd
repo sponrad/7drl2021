@@ -19,8 +19,9 @@ enum spells {
     LIGHTNING,
     SPIDER,
     VOID_RAY,
-#    ROOTS,
+    ROOTS,
 #    SHEILD,
+#    MAGIC_WALL,
 }
 
 class Spell:
@@ -132,6 +133,14 @@ var defs = {
         targeting.ANY_VISIBILE,
         'res://scenes/spells/VOID_RAY.tscn',
         {'upkeep': 0, 'attack': 10000, 'health': 0}
+    ),
+    spells.ROOTS: Spell.new(
+        'Roots',
+        'Summon some roots to grab an enemy and hold them in place',
+        10,
+        20,
+        targeting.ANY_VISIBILE,
+        'res://scenes/spells/ROOTS.tscn'
     ),
 }
 

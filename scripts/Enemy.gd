@@ -7,6 +7,7 @@ var awake = false
 # these get updated down in _ready
 var health: int = 0
 var attack: int = 0
+var cannot_move = false
 
 onready var game_manager : Node = get_node("/root/MainScene")
 
@@ -95,7 +96,9 @@ func move_to(target_tile):
         enemy.take_damage(attack)
     elif target_tile.grid_position() == Globals.wizard_start:
         game_manager.get_node('Wizard').take_damage(attack)
-    elif target_tile.is_moveable() and not target_tile.has_enemy():
+    elif target_tile.is_moveable() \
+        and not target_tile.has_enemy() \
+        and not cannot_move:
         position = target_tile.position - Vector2(32, 32)
 
 func take_damage(amount):
