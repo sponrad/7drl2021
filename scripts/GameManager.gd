@@ -117,3 +117,11 @@ func game_over():
 
 func _on_Restart_pressed():
     get_tree().reload_current_scene()
+
+func spawn_item(grid_pos):
+    # need to intelligently put an item here,
+    # items can be on top of some otherwise inaccessible features
+    # for tomes we dont want to duplicate spells available in tomes, so track them
+    # we also dont want to spawn a tome for a spell that the wizard already has access to
+    print('spawning item at %s' % grid_pos)
+    pass

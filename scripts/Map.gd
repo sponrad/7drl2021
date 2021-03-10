@@ -120,6 +120,8 @@ func generate_map():
             var monster = monster_scene.instance()
             add_child(monster)
             monster.position = grid_position * Vector2(64, 64)
+        if randi() % 100 > 95:
+            game_manager.spawn_item(grid_position)
 
 func clear_player_fov():
     for tile in allTiles:
