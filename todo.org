@@ -51,7 +51,7 @@
 ** DONE teleport item
 ** DONE an AOE spell (lightning?)
 ** DONE another stronger summon
-** TODO stronger single target
+** DONE stronger single target
 ** TODO wall spell
 ** TODO roots
 ** TODO magic sheild to take some hits

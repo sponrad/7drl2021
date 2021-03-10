@@ -12,7 +12,7 @@ func _ready():
         SpellData.spells.FAR_SIGHT,
         SpellData.spells.MAGIC_SPIRIT,
         SpellData.spells.FIRE_BOLT,
-        #SpellData.spells.CRAB,
+        #SpellData.spells.VOID_RAY,
         #SpellData.spells.LIGHTNING
     ]
     # start with some learnable spells

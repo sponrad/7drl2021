@@ -18,7 +18,7 @@ enum spells {
     TELEPORT_ITEM,
     LIGHTNING,
     SPIDER,
-#    VOID_RAY,
+    VOID_RAY,
 #    ROOTS,
 #    SHEILD,
 }
@@ -123,6 +123,15 @@ var defs = {
         targeting.NEXT_TO_WIZARD,
         'res://scenes/spells/SPIDER.tscn',
         {'upkeep': 10, 'attack': 4, 'health': 12}
+    ),
+    spells.VOID_RAY: Spell.new(
+        'Void Ray',
+        'Pure void energy extends from you to the target. Not many things survive that.',
+        25,
+        40,
+        targeting.ANY_VISIBILE,
+        'res://scenes/spells/VOID_RAY.tscn',
+        {'upkeep': 0, 'attack': 10000, 'health': 0}
     ),
 }
 
