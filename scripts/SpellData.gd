@@ -4,6 +4,7 @@ enum targeting {
     ANYWHERE,
     ANY_VISIBILE,
     NEXT_TO_WIZARD,
+    ANY_FOG,
 }
 
 enum spells {
@@ -56,7 +57,7 @@ var defs = {
         'Far Sight',
         'Reveal a region of the map',
         20,
-        targeting.ANYWHERE,
+        targeting.ANY_FOG,
         'res://scenes/spells/FAR_SIGHT.tscn'
     ),
     spells.FIRE_BOLT: Spell.new(
