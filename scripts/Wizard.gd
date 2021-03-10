@@ -3,6 +3,7 @@ extends Area2D
 var known_spells: Array = []
 var discovered_spells: Array = []
 var is_casting = false
+var barrier
 onready var game_manager : Node = get_node("/root/MainScene")
 
 func _ready():
@@ -31,6 +32,10 @@ func set_casting(casting):
         $CastingSwirl.hide()
 
 func take_damage(amount):
+    if barrier:
+        barrier.queue_free()
+        barrier = null
+        return
     Globals.show_damage((position + Vector2(-16, -16)), amount)
     game_manager.game_over()
 

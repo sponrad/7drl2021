@@ -54,7 +54,7 @@
 ** DONE stronger single target
 ** TODO wall spell
 ** DONE roots
-** TODO magic sheild to take some hits
+** DONE magic sheild to take some hits
 ** DONE mastery
 * TODO attack animation or nudge thing
 * TODO sounds

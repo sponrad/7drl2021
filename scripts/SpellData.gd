@@ -6,6 +6,7 @@ enum targeting {
     NEXT_TO_WIZARD,
     ANY_FOG,
     ITEM,
+    SELF,
 }
 
 enum spells {
@@ -21,7 +22,7 @@ enum spells {
     VOID_RAY,
     ROOTS,
 #    SHEILD,
-#    MAGIC_WALL,
+    BARRIER,
 }
 
 class Spell:
@@ -104,7 +105,7 @@ var defs = {
         'You win no questions asked',
         50,
         100,
-        targeting.ANYWHERE,
+        targeting.SELF,
         'res://scenes/spells/MASTERY.tscn'
     ),
     spells.LIGHTNING: Spell.new(
@@ -141,6 +142,14 @@ var defs = {
         20,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/ROOTS.tscn'
+    ),
+    spells.BARRIER: Spell.new(
+        'Shimmering Barrier',
+        'Surround yourself with a barrier that blocks damage',
+        10,
+        20,
+        targeting.SELF,
+        'res://scenes/spells/BARRIER.tscn'
     ),
 }
 

@@ -66,6 +66,10 @@ func highlight_available_tiles ():
             for tile in allTiles:
                 if tile.has_item():
                     tile.toggle_highlight(true)
+        elif targeting == SpellData.targeting.SELF:
+            var pos = Globals.wizard_start
+            get_tile_at_coords(pos).toggle_highlight(true)
+
     elif game_manager.currently_moving_summon:
         var summon = game_manager.current_summon
         var pos = get_tile_at_position(summon.position).grid_position()
