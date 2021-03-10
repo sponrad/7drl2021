@@ -58,8 +58,7 @@
 ** DONE mastery
 * TODO attack animation or nudge thing
 * TODO sounds
-* TODO monsters wake up after certain turn count based on distance away
-* TODO on certain turn number, monsters, boss, fow all awake/active
+* DONE on certain turn number, monsters, boss, fow all awake/active
 * DONE prevent enemies moving through enemies
 * DONE summons should update mana per turn UI upon death
 * DONE animated text about what item was obtained / event system

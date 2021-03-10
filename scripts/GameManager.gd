@@ -61,6 +61,20 @@ func end_turn ():
     ui.on_end_turn()
     if current_summon and current_summon.health > 0:
         start_move_summon()
+    if current_turn == 190:
+        $Wizard.show_message('Everything is waking up soon...')
+    if current_turn > 200:
+        wake_and_show_all()
+
+
+func wake_and_show_all():
+    $Wizard.show_message('Everything is awake!!!')
+    for monster in get_tree().get_nodes_in_group("monsters"):
+        if not monster.awake:
+            monster.awaken()
+    for tile in map.allTiles:
+        tile.clear_fog()
+
 
 func on_select_spell(spell):
     $Wizard.set_casting(true)
