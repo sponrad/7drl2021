@@ -3,6 +3,9 @@ extends Area2D
 var typeTileMaps = []
 var type
 var spell_type
+var direction
+var velocity = 500
+var traveling = false
 
 onready var game_manager : Node = get_node("/root/MainScene")
 
@@ -24,8 +27,20 @@ func _ready():
         tilemap.hide()
     typeTileMaps[type].show()
     add_to_group("map_items")
+    direction = game_manager.get_node('Wizard').position - position
+    set_process(false)
+
+func _process(delta):
+    position += direction.normalized() * velocity * delta
+    if Globals.position_to_grid(position) == Globals.wizard_start:
+        # display some neat text here
+        get_item_effect()
+        queue_free()
 
 func gain_item():
+    set_process(true)
+
+func get_item_effect():
     if type == ItemData.types.SPELLBOOK:
         game_manager.get_node('Wizard').discovered_spells.append(spell_type)
     elif type == ItemData.types.POWER_INC:
@@ -35,6 +50,3 @@ func gain_item():
     elif type == ItemData.types.POWER:
         # do a burst to mana and research
         pass
-    print('gained item type %s' % type)
-    # TODO show some text of what on earth is happening
-    queue_free()

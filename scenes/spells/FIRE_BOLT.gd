@@ -5,7 +5,7 @@ onready var game_manager : Node = get_node("/root/MainScene")
 var spell = SpellData.spells.FIRE_BOLT
 var start_pos = (Globals.wizard_start * 64.0) + Vector2(32, 32)
 var end_pos: Vector2
-var velocity = 500
+var velocity = 1000
 var direction: Vector2
 var will_handle_end_of_turn = true
 

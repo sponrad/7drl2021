@@ -62,5 +62,5 @@
 * TODO prevent enemies moving through enemies
 * DONE summons should update mana per turn UI upon death
 * TODO animated text about what item was obtained / event system
-* TODO animate item pickup (send it to wizard)
+* DONE animate item pickup (send it to wizard)
 * DONE share move and attack code on summons
