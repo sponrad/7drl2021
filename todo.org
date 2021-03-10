@@ -59,7 +59,7 @@
 * TODO attack animation or nudge thing
 * TODO sounds
 * TODO on certain turn number, monsters, boss, fow all awake/active
-* TODO prevent enemies moving through enemies
+* DONE prevent enemies moving through enemies
 * DONE summons should update mana per turn UI upon death
 * TODO animated text about what item was obtained / event system
 * DONE animate item pickup (send it to wizard)

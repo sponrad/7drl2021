@@ -82,7 +82,7 @@ func take_turn():
         desired_directions.append(Vector2(0, most_desired_direction.y).normalized())
     for direction in desired_directions:
         var tile = game_manager.map.get_tile_at_coords(current_grid + direction)
-        if tile.is_moveable():
+        if tile.is_moveable() and not tile.has_enemy():
             # could also track the last ~3 tiles to see if we have been in one recently and skip
             return move_to(tile)
 
@@ -95,7 +95,7 @@ func move_to(target_tile):
         enemy.take_damage(attack)
     elif target_tile.grid_position() == Globals.wizard_start:
         game_manager.get_node('Wizard').take_damage(attack)
-    elif target_tile.is_moveable():
+    elif target_tile.is_moveable() and not target_tile.has_enemy():
         position = target_tile.position - Vector2(32, 32)
 
 func take_damage(amount):
