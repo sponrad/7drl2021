@@ -72,15 +72,27 @@ func take_turn():
     var most_desired_direction = current_grid.direction_to(target_grid_pos)
     var desired_directions = []
     if abs(most_desired_direction.x) > abs(most_desired_direction.y):
-        desired_directions.append(Vector2(most_desired_direction.x, 0).normalized())
-        desired_directions.append(Vector2(0, most_desired_direction.y).normalized())
-        desired_directions.append(Vector2(0, -most_desired_direction.y).normalized())
-        desired_directions.append(Vector2(-most_desired_direction.x, 0).normalized())
+        desired_directions += [
+            Vector2(most_desired_direction.x, 0).normalized(),
+            Vector2(0, most_desired_direction.y).normalized()
+        ]
+        var other_directions = [
+            Vector2(0, -most_desired_direction.y).normalized(),
+            Vector2(-most_desired_direction.x, 0).normalized()
+        ]
+        other_directions.shuffle()
+        desired_directions += other_directions
     else:
-        desired_directions.append(Vector2(0, most_desired_direction.y).normalized())
-        desired_directions.append(Vector2(most_desired_direction.x, 0).normalized())
-        desired_directions.append(Vector2(most_desired_direction.x, 0).normalized())
-        desired_directions.append(Vector2(0, most_desired_direction.y).normalized())
+        desired_directions += [
+            Vector2(0, most_desired_direction.y).normalized(),
+            Vector2(most_desired_direction.x, 0).normalized()
+        ]
+        var other_directions = [
+            Vector2(most_desired_direction.x, 0).normalized(),
+            Vector2(0, most_desired_direction.y).normalized()
+        ]
+        other_directions.shuffle()
+        desired_directions += other_directions
     for direction in desired_directions:
         var tile = game_manager.map.get_tile_at_coords(current_grid + direction)
         if tile.is_moveable() and not tile.has_enemy():
