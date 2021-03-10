@@ -1,6 +1,6 @@
 extends Node2D
 
-var velocity = 2
+var velocity = 20
 var opacity = 1.0
 
 func _ready():

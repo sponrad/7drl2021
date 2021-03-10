@@ -120,7 +120,7 @@ func generate_map():
             var monster = monster_scene.instance()
             add_child(monster)
             monster.position = grid_position * Vector2(64, 64)
-        elif randi() % 100 > 90 \
+        elif randi() % 100 > 85 \
             and not allTiles[x].feature_type \
             and allTiles[x].tile_type != TileData.tile_types.WATER:
             game_manager.spawn_item(grid_position)

@@ -18,7 +18,15 @@ func _ready():
         ItemData.types.POWER: $PowerBurst
     }
     # should have a higher chance for spellbook
-    type = randi() % len(ItemData.types)
+    var chance = randi() % 100
+    if chance < 40:
+        type = ItemData.types.SPELLBOOK
+    elif chance < 60:
+        type = ItemData.types.MANA_INC
+    elif chance < 80:
+        type = ItemData.types.POWER_INC
+    else:
+        type = ItemData.types.POWER
     if type == ItemData.types.SPELLBOOK:
         spell_type = ItemData.find_unique_spell(
             game_manager.get_node('Wizard'))
