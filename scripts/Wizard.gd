@@ -1,6 +1,7 @@
 extends Area2D
 
 var known_spells: Array = []
+var discovered_spells: Array = []
 var is_casting = false
 onready var game_manager : Node = get_node("/root/MainScene")
 

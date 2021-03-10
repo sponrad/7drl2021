@@ -7,6 +7,9 @@ func position_to_grid(position):
         int(position.x) / 64,
         int(position.y) / 64
     )
+    
+func grid_to_position(grid):
+    return grid * Vector2(64, 64)
 
 var DamageNumber = preload("res://scenes/DamageNumber.tscn")
 

@@ -26,6 +26,7 @@ BuildingData="*res://scripts/BuildingData.gd"
 TileData="*res://scripts/TileData.gd"
 EnemyData="*res://scripts/EnemyData.gd"
 SpellData="*res://scripts/SpellData.gd"
+ItemData="*res://scripts/ItemData.gd"
 Globals="*res://scripts/Globals.gd"
 
 [display]
