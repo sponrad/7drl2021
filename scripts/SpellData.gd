@@ -10,13 +10,13 @@ enum targeting {
 
 enum spells {
     SPELL_OF_MASTERY,
-    ENCHANT_AREA, # cannot be chosen?
+    ENCHANT_AREA,
     MAGIC_SPIRIT, # start
     FAR_SIGHT,
     FIRE_BOLT, # start
     CRAB,
     TELEPORT_ITEM,
-#    LIGHTNING,
+    LIGHTNING,
 #    VOID_RAY,
 #    ROOTS,
 #    SHEILD,
@@ -104,7 +104,16 @@ var defs = {
         100,
         targeting.ANYWHERE,
         'res://scenes/spells/MASTERY.tscn'
-    )
+    ),
+    spells.LIGHTNING: Spell.new(
+        'Lightning',
+        'Conjure lightning, damages all enemies within range of 2 or so',
+        20,
+        40,
+        targeting.ANY_VISIBILE,
+        'res://scenes/spells/LIGHTNING.tscn',
+        {'upkeep': 0, 'attack': 3, 'health': 0}
+    ),
 }
 
 

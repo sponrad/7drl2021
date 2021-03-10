@@ -49,7 +49,7 @@
 * DONE research new spells
 * TODO spells spells spells
 ** DONE teleport item
-** TODO an AOE spell (lightning?)
+** DONE an AOE spell (lightning?)
 ** TODO another stronger summon
 ** TODO stronger single target
 ** TODO wall spell
