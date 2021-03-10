@@ -12,6 +12,7 @@ func grid_to_position(grid):
     return grid * Vector2(64, 64)
 
 var DamageNumber = preload("res://scenes/DamageNumber.tscn")
+var OverheadMessage = preload("res://scenes/OverheadStatusMessage.tscn")
 
 func show_damage(position, amount):
     var damage = DamageNumber.instance()

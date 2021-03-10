@@ -46,21 +46,23 @@
 * TODO end goal, defeat some powerful thing or cast mastery
 * TODO enemy wizard...
 * TODO power allocation per turn, mana vs spell research
+* TODO remove the stats UI page
 * TODO research new spells
 * TODO spells spells spells
-** teleport item
-** an AOE spell (lightning?)
-** another stronger summon
-** stronger single target
-** wall spell
-** roots
-** magic sheild to take some hits
-** mastery
+** TODO teleport item
+** TODO an AOE spell (lightning?)
+** TODO another stronger summon
+** TODO stronger single target
+** TODO wall spell
+** TODO roots
+** TODO magic sheild to take some hits
+** TODO mastery
 * TODO attack animation or nudge thing
 * TODO sounds
 * TODO on certain turn number, monsters, boss, fow all awake/active
 * DONE prevent enemies moving through enemies
 * DONE summons should update mana per turn UI upon death
-* TODO animated text about what item was obtained / event system
+* DONE animated text about what item was obtained / event system
 * DONE animate item pickup (send it to wizard)
 * DONE share move and attack code on summons
+* DONE setup page on itchio
