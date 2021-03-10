@@ -34,7 +34,6 @@
 ** DONE damage numbers foating over when hit
 ** DONE enemy movement toward wizard or nearest summon (to attack it)
 ** DONE death if wizard is hit
-* TODO monsters wake up after certain turn count based on distance away
 * TODO forest delayed next move
 * DONE put places of interest on the map (power boost spots!)
 * DONE enemies drop goods (but how do you get them)
@@ -49,7 +48,7 @@
 * TODO remove the stats UI page
 * TODO research new spells
 * TODO spells spells spells
-** TODO teleport item
+** DONE teleport item
 ** TODO an AOE spell (lightning?)
 ** TODO another stronger summon
 ** TODO stronger single target
@@ -59,6 +58,7 @@
 ** TODO mastery
 * TODO attack animation or nudge thing
 * TODO sounds
+* TODO monsters wake up after certain turn count based on distance away
 * TODO on certain turn number, monsters, boss, fow all awake/active
 * DONE prevent enemies moving through enemies
 * DONE summons should update mana per turn UI upon death

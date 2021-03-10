@@ -62,6 +62,10 @@ func highlight_available_tiles ():
             for tile in allTiles:
                 if tile.fog_of_war == true:
                     tile.toggle_highlight(true)
+        elif targeting == SpellData.targeting.ITEM:
+            for tile in allTiles:
+                if tile.has_item():
+                    tile.toggle_highlight(true)
     elif game_manager.currently_moving_summon:
         var summon = game_manager.current_summon
         var pos = get_tile_at_position(summon.position).grid_position()

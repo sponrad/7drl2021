@@ -5,6 +5,7 @@ enum targeting {
     ANY_VISIBILE,
     NEXT_TO_WIZARD,
     ANY_FOG,
+    ITEM,
 }
 
 enum spells {
@@ -14,6 +15,11 @@ enum spells {
     FAR_SIGHT,
     FIRE_BOLT,
     CRAB,
+    TELEPORT_ITEM,
+    LIGHTNING,
+    VOID_RAY,
+    ROOTS,
+    SHEILD,
 }
 
 class Spell:
@@ -76,6 +82,13 @@ var defs = {
         'res://scenes/spells/CRAB.tscn',
         {'upkeep': 2, 'attack': 1, 'health': 2}
     ),
+    spells.TELEPORT_ITEM: Spell.new(
+        'Teleport Item',
+        'Grab an item on the map',
+        1,
+        targeting.ITEM,
+        'res://scenes/spells/TELEPORT_ITEM.tscn'
+    )
 }
 
 
