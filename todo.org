@@ -50,3 +50,4 @@ https://kenney.nl/assets/medieval-rts*
 * DONE add a recast previous spell button
 * DONE expor
 * TODO on certain turn number, monsters, boss, fow all awake/active
+* TODO prevent enemies moving through enemies
