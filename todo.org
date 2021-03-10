@@ -1,33 +1,42 @@
-* DONE get a starting template
-* DONE get some tiles
-https://www.reddit.com/r/roguelikedev/comments/lw9n7e/urizen_tileset_update_for_7drl_2021_700_new_tiles/
-or
-https://kenney.nl/assets/map-pack
-or
-https://kenney.nl/assets/rpg-base
-or
-https://kenney.nl/assets/medieval-rts*
-* DONE display map (just hardcode one for now)
-* DONE put wizard on the map
-* DONE put bad guys on the map (asleep)
-* DONE turn count
+* old dones
+** DONE add a recast previous spell button
+** DONE export
+** DONE help screen
+** DONE fog of war
+** DONE title screen
+** DONE game over screen
+** DONE corpses
+** DONE get a starting template
+** DONE get some tiles
+ https://www.reddit.com/r/roguelikedev/comments/lw9n7e/urizen_tileset_update_for_7drl_2021_700_new_tiles/
+ or
+ https://kenney.nl/assets/map-pack
+ or
+ https://kenney.nl/assets/rpg-base
+ or
+ https://kenney.nl/assets/medieval-rts*
+** DONE display map (just hardcode one for now)
+** DONE put wizard on the map
+** DONE put bad guys on the map (asleep)
+** DONE turn count
+** DONE framework for spell data
+** DONE UI for casting spells
+** DONE summon on the map
+** DONE summon movement
+** DONE summon attack (turns)
+** DONE mountains impassable
+** DONE wizard casting spell also triggers a turn
+** DONE stats
+** DONE UI for stats
+** DONE randomly place enemies on the map
+** DONE health bar on summons like crab
+** DONE BUG stop enemy movement during firing of projectile
+** DONE damage numbers foating over when hit
+** DONE enemy movement toward wizard or nearest summon (to attack it)
+** DONE death if wizard is hit
 * TODO monsters wake up after certain turn count based on distance away
-* DONE framework for spell data
-* DONE UI for casting spells
-* DONE summon on the map
-* DONE summon movement
-* DONE summon attack (turns)
-* DONE mountains impassable
 * TODO forest delayed next move
-* DONE wizard casting spell also triggers a turn
-* DONE stats
-* DONE UI for stats
-* DONE randomly place enemies on the map
-* DONE health bar on summons like crab
-* DONE BUG stop enemy movement during firing of projectile
 * TODO put places of interest on the map (power boost spots!)
-* DONE damage numbers foating over when hit
-* DONE enemy movement toward wizard or nearest summon (to attack it)
 * TODO enemies drop goods (but how do you get them)
 ** item that raises power
 ** new spellbook
@@ -35,19 +44,22 @@ https://kenney.nl/assets/medieval-rts*
 ** spell node that can be enchanted for long term power (if you know enchant)
 * TODO spells to learn (randomized list of more powerful spells)
 * TODO end goal, defeat some powerful thing or cast mastery
-* DONE death if wizard is hit
 * TODO enemy wizard...
 * TODO power allocation per turn, mana vs spell research
 * TODO research new spells
 * TODO spells spells spells
-* DONE fog of war
-* DONE title screen
-* DONE game over screen
-* DONE corpses
+** teleport item
+** an AOE spell (lightning?)
+** another stronger summon
+** stronger single target
+** wall spell
+** roots
+** magic sheild to take some hits
+** mastery
 * TODO attack animation or nudge thing
-* DONE help screen
 * TODO sounds
-* DONE add a recast previous spell button
-* DONE expor
 * TODO on certain turn number, monsters, boss, fow all awake/active
 * TODO prevent enemies moving through enemies
+* TODO summons should update mana per turn UI upon death
+* TODO animated text about what item was obtained / event system
+* TODO share move and attack code on summons
