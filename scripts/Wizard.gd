@@ -14,6 +14,9 @@ func _ready():
         SpellData.spells.FIRE_BOLT,
         #SpellData.spells.CRAB,
     ]
+    # start with some learnable spells
+    discovered_spells.append(ItemData.find_unique_spell(self))
+    discovered_spells.append(ItemData.find_unique_spell(self))
 
 func _process(delta):
     if is_casting:

@@ -111,6 +111,6 @@ func take_damage(amount):
             tilemap.hide()
         typeCorpseTileMaps[type].show()
         # maybe spawn an item
-        if randi() % 100 > 70:
+        if randi() % 100 > 50:
             game_manager.spawn_item(grid_position())
         # reward some mp

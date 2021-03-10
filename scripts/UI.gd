@@ -81,11 +81,13 @@ func set_casting_spell_icon(casting):
     else:
         actionButtons.get_node("SelectCastButton").icon = cast_spell_icon
 
-func _on_StatsButton_pressed():
-    print('pressed stats')
-
 func _on_ResearchButton_pressed():
-    print('pressed research')
+    if $SpellResearcher.visible or game_manager.currently_casting_spell:
+        $SpellResearcher.hide()
+    else:
+        $SpellResearcher.popup()
+        game_manager.map.disable_tile_highlights()
+    $SpellResearcher.get_node('ResearchSpellList').populate_spells(game_manager.get_node('Wizard').discovered_spells)
 
 func _on_HelpButton_pressed():
     if $HelpDialog.visible:
@@ -97,3 +99,14 @@ func _on_StartButton_pressed():
     game_manager.start()
     show()
     get_parent().get_node("StartSplash").hide()
+
+
+func _on_ResearchSpellButton_pressed():
+    var spell = $SpellResearcher.get_node("ResearchSpellList").selected_spell
+    $SpellResearcher.hide()
+    game_manager.current_mana -= SpellData.defs[spell].research_cost
+    var wizard = game_manager.get_node('Wizard')
+    wizard.discovered_spells.erase(spell)
+    wizard.known_spells.append(spell)
+    wizard.show_message("Learned %s" % SpellData.defs[spell].name)
+

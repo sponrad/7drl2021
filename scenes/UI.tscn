@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://scripts/ResearchSpellList.gd" type="Script" id=1]
 [ext_resource path="res://font/Roboto-Regular.tres" type="DynamicFont" id=2]
 [ext_resource path="res://sprites/Kenney/Environment/medievalEnvironment_21.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Kenney/Unit/medievalUnit_01.png" type="Texture" id=4]
-[ext_resource path="res://sprites/SolarPanel.png" type="Texture" id=5]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=6]
 [ext_resource path="res://scripts/CastSpellList.gd" type="Script" id=7]
 
@@ -47,36 +47,30 @@ __meta__ = {
 
 [node name="ActionButtons" type="HBoxContainer" parent="."]
 margin_left = 34.0
-margin_top = 34.0
-margin_right = 376.0
-margin_bottom = 109.0
+margin_top = 8.0
+margin_right = 384.0
+margin_bottom = 120.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SelectCastButton" type="Button" parent="ActionButtons"]
-margin_left = 29.0
-margin_right = 105.0
-margin_bottom = 75.0
+margin_left = 73.0
+margin_right = 149.0
+margin_bottom = 112.0
 icon = ExtResource( 3 )
 
 [node name="ResearchButton" type="Button" parent="ActionButtons"]
-margin_left = 109.0
-margin_right = 185.0
-margin_bottom = 75.0
-icon = ExtResource( 5 )
-
-[node name="StatsButton" type="Button" parent="ActionButtons"]
-margin_left = 189.0
-margin_right = 265.0
-margin_bottom = 75.0
+margin_left = 153.0
+margin_right = 229.0
+margin_bottom = 112.0
 icon = ExtResource( 4 )
 
 [node name="HelpButton" type="Button" parent="ActionButtons"]
-margin_left = 269.0
-margin_right = 313.0
-margin_bottom = 75.0
+margin_left = 233.0
+margin_right = 277.0
+margin_bottom = 112.0
 text = "HELP"
 expand_icon = true
 
@@ -150,6 +144,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SpellResearcher" type="WindowDialog" parent="."]
+margin_left = 32.0
+margin_top = -392.0
+margin_right = 704.0
+margin_bottom = -64.0
+window_title = "Spell Research"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResearchSpellList" type="ItemList" parent="SpellResearcher"]
+margin_right = 224.0
+margin_bottom = 328.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpellName" type="Label" parent="SpellResearcher"]
+margin_left = 256.0
+margin_top = 96.0
+margin_right = 608.0
+margin_bottom = 144.0
+text = "Choose a spell"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpellDescription" type="RichTextLabel" parent="SpellResearcher"]
+margin_left = 256.0
+margin_top = 128.0
+margin_right = 632.0
+margin_bottom = 320.0
+
+[node name="ResearchSpellButton" type="Button" parent="SpellResearcher"]
+margin_left = 248.0
+margin_top = 24.0
+margin_right = 392.0
+margin_bottom = 72.0
+disabled = true
+text = "RESEARCH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HelpDialog" type="WindowDialog" parent="."]
 margin_left = 64.0
 margin_top = -544.0
@@ -195,7 +234,8 @@ __meta__ = {
 [connection signal="pressed" from="EndTurnButton" to="." method="_on_EndTurnButton_pressed"]
 [connection signal="pressed" from="ActionButtons/SelectCastButton" to="." method="_on_SelectCastButton_pressed"]
 [connection signal="pressed" from="ActionButtons/ResearchButton" to="." method="_on_ResearchButton_pressed"]
-[connection signal="pressed" from="ActionButtons/StatsButton" to="." method="_on_StatsButton_pressed"]
 [connection signal="pressed" from="ActionButtons/HelpButton" to="." method="_on_HelpButton_pressed"]
 [connection signal="item_selected" from="SpellPicker/CastSpellList" to="SpellPicker/CastSpellList" method="_on_CastSpellList_item_selected"]
 [connection signal="pressed" from="SpellPicker/CastButton" to="." method="_on_CastButton_pressed"]
+[connection signal="item_selected" from="SpellResearcher/ResearchSpellList" to="SpellResearcher/ResearchSpellList" method="_on_ResearchSpellList_item_selected"]
+[connection signal="pressed" from="SpellResearcher/ResearchSpellButton" to="." method="_on_ResearchSpellButton_pressed"]

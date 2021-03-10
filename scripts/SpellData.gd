@@ -10,16 +10,16 @@ enum targeting {
 
 enum spells {
     SPELL_OF_MASTERY,
-    ENCHANT_AREA,
-    MAGIC_SPIRIT,
+    ENCHANT_AREA, # cannot be chosen?
+    MAGIC_SPIRIT, # start
     FAR_SIGHT,
-    FIRE_BOLT,
+    FIRE_BOLT, # start
     CRAB,
     TELEPORT_ITEM,
-    LIGHTNING,
-    VOID_RAY,
-    ROOTS,
-    SHEILD,
+#    LIGHTNING,
+#    VOID_RAY,
+#    ROOTS,
+#    SHEILD,
 }
 
 class Spell:
@@ -31,11 +31,13 @@ class Spell:
     var scene_path
     var attack
     var health
+    var research_cost
 
-    func _init(name, description, cost, targeting, scene_path, stats=null):
+    func _init(name, description, cost, research_cost, targeting, scene_path, stats=null):
         self.name = name
         self.description = description
         self.cost = cost
+        self.research_cost = research_cost
         self.targeting = targeting
         self.scene_path = scene_path
         self.upkeep = stats["upkeep"] if stats else 0
@@ -48,6 +50,7 @@ var defs = {
         'Enchant Tile',
         'Enchant the chosen map tile, gaining the tiles power',
         10,
+        20,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/ENCHANT_AREA.tscn'
     ),
@@ -55,6 +58,7 @@ var defs = {
         'Summon Magic Spirit',
         'Summon a small quick spirit that cannot attack',
         2,
+        4,
         targeting.NEXT_TO_WIZARD,
         'res://scenes/spells/MAGIC_SPIRIT.tscn',
         {'upkeep': 1, 'attack': 0, 'health': 1}
@@ -62,7 +66,8 @@ var defs = {
     spells.FAR_SIGHT: Spell.new(
         'Far Sight',
         'Reveal a region of the map',
-        20,
+        5,
+        10,
         targeting.ANY_FOG,
         'res://scenes/spells/FAR_SIGHT.tscn'
     ),
@@ -70,6 +75,7 @@ var defs = {
         'Fire Bolt',
         'Shoot a bolt of slightly intense flame at a single target',
         2,
+        4,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/FIRE_BOLT.tscn',
         {'upkeep': 0, 'attack': 1, 'health': 0}
@@ -78,6 +84,7 @@ var defs = {
         'Summon Crab',
         'Summon a small crabby helper',
         5,
+        10,
         targeting.NEXT_TO_WIZARD,
         'res://scenes/spells/CRAB.tscn',
         {'upkeep': 2, 'attack': 1, 'health': 2}
@@ -86,6 +93,7 @@ var defs = {
         'Teleport Item',
         'Grab an item on the map',
         1,
+        2,
         targeting.ITEM,
         'res://scenes/spells/TELEPORT_ITEM.tscn'
     ),
@@ -93,6 +101,7 @@ var defs = {
         'Spell of Mastery',
         'You win no questions asked',
         50,
+        100,
         targeting.ANYWHERE,
         'res://scenes/spells/MASTERY.tscn'
     )

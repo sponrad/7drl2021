@@ -215,7 +215,7 @@
 9/shapes = [  ]
 9/z_index = 0
 
-[node name="EnchantArea" type="Area2D"]
+[node name="TeleportItem" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="TileMap" parent="."]

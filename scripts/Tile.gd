@@ -75,13 +75,13 @@ func has_enemy():
 
 func has_item():
     for map_item in get_tree().get_nodes_in_group("map_items"):
-        if map_item.grid_position() == grid_position():
+        if Globals.position_to_grid(map_item.position) == grid_position():
             return map_item
     return false
 
 func is_moveable():
     if feature_type in [TileData.feature_types.ROCK_BROWN,
-                                        TileData.feature_types.ROCK_GRAY]:
+                        TileData.feature_types.ROCK_GRAY]:
         return false
     return true
 

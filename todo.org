@@ -41,12 +41,12 @@
 ** new spellbook
 ** immediate power gift, spread between research and manage
 ** spell node that can be enchanted for long term power (if you know enchant)
-* TODO spells to learn (randomized list of more powerful spells)
+* DONE spells to learn (randomized list of more powerful spells)
 * TODO end goal, defeat some powerful thing or cast mastery
 * TODO enemy wizard...
-* TODO power allocation per turn, mana vs spell research
-* TODO remove the stats UI page
-* TODO research new spells
+* DONE power allocation per turn, mana vs spell research
+* DONE remove the stats UI page
+* DONE research new spells
 * TODO spells spells spells
 ** DONE teleport item
 ** TODO an AOE spell (lightning?)
@@ -66,5 +66,5 @@
 * DONE animate item pickup (send it to wizard)
 * DONE share move and attack code on summons
 * DONE setup page on itchio
-* TODO find_unique_spell seems to be non randomized
+* TODO find_unique_spell seems to be non random
   adding the same spells to the map everytime
