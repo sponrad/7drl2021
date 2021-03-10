@@ -30,7 +30,7 @@ func _ready():
     if type == ItemData.types.SPELLBOOK:
         spell_type = ItemData.find_unique_spell(
             game_manager.get_node('Wizard'))
-        if not spell_type:
+        if typeof(spell_type) != TYPE_INT:
             type = ItemData.types.POWER_INC
     for tilemap in typeTileMaps.values():
         tilemap.hide()
