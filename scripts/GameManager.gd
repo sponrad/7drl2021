@@ -108,7 +108,7 @@ func start_move_summon():
     map.highlight_available_tiles()
 
 func move_summon(target_tile):
-    if paused:
+    if paused or not current_summon or current_summon.health < 1:
         return
     current_summon.move_to(target_tile)
 
@@ -127,4 +127,4 @@ func spawn_item(grid_pos):
     var item = ItemData.mapitem_scene.instance()
     item.position = Globals.grid_to_position(grid_pos)
     add_child(item)
-    
+

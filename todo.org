@@ -36,8 +36,8 @@
 ** DONE death if wizard is hit
 * TODO monsters wake up after certain turn count based on distance away
 * TODO forest delayed next move
-* TODO put places of interest on the map (power boost spots!)
-* TODO enemies drop goods (but how do you get them)
+* DONE put places of interest on the map (power boost spots!)
+* DONE enemies drop goods (but how do you get them)
 ** item that raises power
 ** new spellbook
 ** immediate power gift, spread between research and manage
@@ -62,4 +62,5 @@
 * TODO prevent enemies moving through enemies
 * TODO summons should update mana per turn UI upon death
 * TODO animated text about what item was obtained / event system
-* TODO share move and attack code on summons
+* TODO animate item pickup (send it to wizard)
+* DONE share move and attack code on summons

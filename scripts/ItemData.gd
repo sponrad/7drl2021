@@ -3,8 +3,8 @@ extends Node
 enum types {
     SPELLBOOK,
     POWER_INC,      # add to current power
-    MANA_INC,       # adds to current mana 
-    POWER           # power that gets split between mana and research    
+    MANA_INC,       # adds to current mana
+    POWER           # power that gets split between mana and research
 }
 
 var mapitem_scene = preload('res://scenes/MapItem.tscn')

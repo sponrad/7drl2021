@@ -10,23 +10,10 @@ func _ready():
     if game_manager.current_summon:
         game_manager.current_summon.take_damage(10000)
     game_manager.current_summon = self
+    SpellData.summon_check_for_items(self)
 
 func move_to(target_tile):
-    # if movable, then move there
-    if target_tile.has_enemy():
-        var enemy = target_tile.has_enemy()
-        enemy.take_damage(attack)
-    elif target_tile.is_moveable():
-        position = target_tile.position
-    game_manager.map.clear_fov_at_position(position, 2)
-    game_manager.end_turn()
+    SpellData.summon_move_to(self, target_tile)
 
 func take_damage(amount):
-    Globals.show_damage((position + Vector2(-16, -16)), amount)
-    health -= amount
-    var new_val = float(health) / float(SpellData.defs[spell].health) * 100.0
-    $HealthBar.value = new_val
-    if health <= 0:
-        # do an animation or something
-        game_manager.map.disable_tile_highlights()
-        queue_free()
+    SpellData.summontake_damage(self, amount)

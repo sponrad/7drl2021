@@ -24,7 +24,7 @@ func _ready():
         tilemap.hide()
     typeTileMaps[type].show()
     add_to_group("map_items")
-    
+
 func gain_item():
     if type == ItemData.types.SPELLBOOK:
         game_manager.get_node('Wizard').discovered_spells.append(spell_type)
@@ -35,9 +35,6 @@ func gain_item():
     elif type == ItemData.types.POWER:
         # do a burst to mana and research
         pass
+    print('gained item type %s' % type)
     # TODO show some text of what on earth is happening
     queue_free()
-
-func _on_MapItem_area_shape_entered(area_id, area, area_shape, self_shape):
-    print('HEY WE"VE ENTERED HERE')
-    gain_item()

@@ -76,3 +76,34 @@ var defs = {
         {'upkeep': 2, 'attack': 1, 'health': 2}
     ),
 }
+
+
+func summon_check_for_items(summon):
+    for mapitem in get_tree().get_nodes_in_group("map_items"):
+        if Globals.position_to_grid(mapitem.position) \
+            == Globals.position_to_grid(summon.position):
+            mapitem.gain_item()
+
+
+func summon_move_to(summon, target_tile):
+    # if movable, then move there
+    if target_tile.has_enemy():
+        var enemy = target_tile.has_enemy()
+        enemy.take_damage(summon.attack)
+    elif target_tile.is_moveable():
+        summon.position = target_tile.position
+        # check if there is an item on this tile
+        summon_check_for_items(summon)
+    summon.game_manager.map.clear_fov_at_position(summon.position, 2)
+    summon.game_manager.end_turn()
+
+
+func summon_take_damage(summon, amount):
+    Globals.show_damage((summon.position + Vector2(-16, -16)), amount)
+    summon.health -= amount
+    var new_val = float(summon.health) / float(SpellData.defs[summon.spell].health) * 100.0
+    summon.get_node('HealthBar').value = new_val
+    if summon.health <= 0:
+        # do an animation or something
+        summon.game_manager.map.disable_tile_highlights()
+        summon.queue_free()
