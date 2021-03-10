@@ -50,7 +50,7 @@
 * TODO spells spells spells
 ** DONE teleport item
 ** DONE an AOE spell (lightning?)
-** TODO another stronger summon
+** DONE another stronger summon
 ** TODO stronger single target
 ** TODO wall spell
 ** TODO roots

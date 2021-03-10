@@ -17,6 +17,7 @@ enum spells {
     CRAB,
     TELEPORT_ITEM,
     LIGHTNING,
+    SPIDER,
 #    VOID_RAY,
 #    ROOTS,
 #    SHEILD,
@@ -113,6 +114,15 @@ var defs = {
         targeting.ANY_VISIBILE,
         'res://scenes/spells/LIGHTNING.tscn',
         {'upkeep': 0, 'attack': 3, 'health': 0}
+    ),
+    spells.SPIDER: Spell.new(
+        'Summon Giant Armored Spider',
+        'Summon a spider. A huge one that is armored',
+        25,
+        40,
+        targeting.NEXT_TO_WIZARD,
+        'res://scenes/spells/SPIDER.tscn',
+        {'upkeep': 10, 'attack': 4, 'health': 12}
     ),
 }
 
