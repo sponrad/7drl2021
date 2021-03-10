@@ -48,4 +48,5 @@ https://kenney.nl/assets/medieval-rts*
 * DONE help screen
 * TODO sounds
 * DONE add a recast previous spell button
-* DONE export
+* DONE expor
+* TODO on certain turn number, monsters, boss, fow all awake/active
