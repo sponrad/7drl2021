@@ -1,7 +1,7 @@
 extends Sprite
 
 
-var total_time = randf() * 1
+var total_time = randf() * 100
 var start_pos: Vector2
 var fading_off = false
 var opacity = 1.0
