@@ -10,9 +10,10 @@ var testing = true
 func _ready():
     z_index = 0
     known_spells = [
+        SpellData.spells.CLEAR_FOG,
+        SpellData.spells.TELEPORT_ITEM,
         SpellData.spells.MAGIC_SPIRIT,
         SpellData.spells.FIRE_BOLT,
-        SpellData.spells.TELEPORT_ITEM,
     ]
     if testing:
         known_spells = SpellData.spells.values()

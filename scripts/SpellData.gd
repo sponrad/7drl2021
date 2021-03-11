@@ -16,13 +16,13 @@ enum spells {
     FAR_SIGHT,
     FIRE_BOLT, # start
     CRAB,
-    TELEPORT_ITEM,
+    TELEPORT_ITEM, # start
     LIGHTNING,
     SPIDER,
     VOID_RAY,
     ROOTS,
-#    SHEILD,
     BARRIER,
+    CLEAR_FOG, # start
 }
 
 class Spell:
@@ -68,7 +68,7 @@ var defs = {
     ),
     spells.FAR_SIGHT: Spell.new(
         'Far Sight',
-        'Reveal a region of the map',
+        'Magically remove the foggy clouds from a large region of the map. Enemies stay asleep to boot!',
         5,
         10,
         targeting.ANY_FOG,
@@ -95,7 +95,7 @@ var defs = {
     spells.TELEPORT_ITEM: Spell.new(
         'Teleport Item',
         'Grab an item on the map',
-        1,
+        0,
         2,
         targeting.ITEM,
         'res://scenes/spells/TELEPORT_ITEM.tscn'
@@ -151,6 +151,14 @@ var defs = {
         targeting.SELF,
         'res://scenes/spells/BARRIER.tscn'
     ),
+    spells.CLEAR_FOG: Spell.new(
+        'Clear Fog',
+        'Clear a small amount of foggy clouds. Enemies wake up if you cast this on them!',
+        0,
+        2,
+        targeting.ANY_VISIBILE,
+        'res://scenes/spells/CLEAR_FOG.tscn'
+    )
 }
 
 
