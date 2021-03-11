@@ -11,12 +11,9 @@ func _ready():
 
 
 func populate_spells(discovered_spells):
-    print(SpellData.spells)
-    print(SpellData.defs)
     clear()
     item_spells = []
-    for spell in discovered_spells:
-        print(spell)
+    for spell in discovered_spells:        
         var spell_def = SpellData.defs[spell]
         var text = "%s" % spell_def.name
         add_item(text)

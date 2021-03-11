@@ -34,7 +34,6 @@ func start():
     ui.on_end_turn()
 
 func set_paused(pause):
-    print('setting paused to %s' % pause)
     paused = pause
 
 func update_per_turn_numbers():
@@ -113,7 +112,8 @@ func cast_spell(target_tile):
     if spell.get('will_handle_end_of_turn') == null:
         end_turn()
     else:
-        print('skipping end turn call on cast_spell')
+        #print('skipping end turn call on cast_spell')
+		pass
 
 func add_to_power_per_turn(amount):
     power_per_turn += amount
@@ -149,5 +149,5 @@ func spawn_item(grid_pos):
     var item = ItemData.mapitem_scene.instance()
     item.position = Globals.grid_to_position(grid_pos)
     add_child(item)
-    print('spawned item %s at %s' % [item.get_name(), grid_pos])
+    #print('spawned item %s at %s' % [item.get_name(), grid_pos])
 

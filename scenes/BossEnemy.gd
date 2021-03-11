@@ -45,7 +45,6 @@ func take_turn():
         target_grid_pos = Globals.wizard_start
         enemy = game_manager.get_node('Wizard')
     if EnemyData.defs[type].attack_range >= target_grid_pos.distance_to(current_grid):
-        print('performing a.. RANGED ATTACK')
         enemy.take_damage(attack)
         return
     var most_desired_direction = current_grid.direction_to(target_grid_pos)

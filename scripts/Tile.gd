@@ -48,7 +48,7 @@ func grid_position():
 func _on_Tile_input_event(_viewport, event, _shape_idx):
     # did we click on this tile with our mouse?
     if event is InputEventMouseButton and event.pressed:
-        print(grid_position())
+        #print(grid_position())
         if game_manager.currently_casting_spell and can_target:
             game_manager.cast_spell(self)
         elif game_manager.current_summon \

@@ -69,7 +69,6 @@ func _on_SelectCastButton_pressed():
 
 func _on_CastButton_pressed():
     var spell = $SpellPicker.get_node("CastSpellList").selected_spell
-    print('casting %s' % SpellData.defs[spell].name)
     $SpellPicker.hide()
     # change the image on the
     set_casting_spell_icon(true)

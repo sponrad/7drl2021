@@ -40,7 +40,6 @@ func take_damage(amount):
     game_manager.game_over()
 
 func show_message(message):
-    print("showing message %s" % message)
     var status_message = Globals.OverheadMessage.instance()
     status_message.set_text(message)
     add_child(status_message)
