@@ -28,7 +28,7 @@ var defs = {
     },
     tile_types.SNOW: {},
     tile_types.GRASS_TREE: {
-        'power': 2,
+        'power': 1,
     },
     tile_types.GRASS_OTHER: {},
     tile_types.GRASS: {

@@ -12,6 +12,7 @@ func _ready():
     known_spells = [
         SpellData.spells.MAGIC_SPIRIT,
         SpellData.spells.FIRE_BOLT,
+        SpellData.spells.TELEPORT_ITEM,
     ]
     if testing:
         known_spells = SpellData.spells.values()

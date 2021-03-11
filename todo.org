@@ -75,7 +75,7 @@
 * TODO clear fog spell to avoid use of magic spirit
 * TODO another direct damage spell between fire bolt and void ray
 * DONE give void ray a drawn black line from wizard to target
-* TODO start with teleport item
-* TODO bump down item spawns a hair
-* TODO bump down gains from enchant tile
+* DONE start with teleport item
+* DONE bump down item spawns a hair
+* DONE bump down gains from enchant tile
 * DONE scale up font on picker and researcher
