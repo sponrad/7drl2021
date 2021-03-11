@@ -110,3 +110,8 @@ func _on_ResearchSpellButton_pressed():
     wizard.known_spells.append(spell)
     wizard.show_message("Learned %s" % SpellData.defs[spell].name)
 
+func _on_RecastButton_pressed():
+    if $SpellPicker.get_node("CastSpellList").selected_spell:
+        _on_CastButton_pressed()
+    else:
+        game_manager.get_node('Wizard').show_message("I've nothing to cast...")
