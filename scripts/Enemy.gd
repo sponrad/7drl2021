@@ -94,7 +94,7 @@ func take_turn():
         desired_directions += other_directions
     for direction in desired_directions:
         var tile = game_manager.map.get_tile_at_coords(current_grid + direction)
-        if tile.is_moveable() and not tile.has_enemy():
+        if tile and tile.is_moveable() and not tile.has_enemy():
             # could also track the last ~3 tiles to see if we have been in one recently and skip
             return move_to(tile)
 
