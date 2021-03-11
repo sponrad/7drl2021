@@ -57,35 +57,34 @@ __meta__ = {
 }
 
 [node name="SelectCastButton" type="Button" parent="ActionButtons"]
-margin_left = 31.0
-margin_right = 107.0
+margin_right = 76.0
 margin_bottom = 112.0
 icon = ExtResource( 3 )
 
 [node name="RecastButton" type="Button" parent="ActionButtons"]
-margin_left = 111.0
-margin_right = 154.0
+margin_left = 80.0
+margin_right = 187.0
 margin_bottom = 112.0
-text = "CAST"
+text = "CAST SELECTED"
 
 [node name="ResearchButton" type="Button" parent="ActionButtons"]
-margin_left = 158.0
-margin_right = 234.0
+margin_left = 191.0
+margin_right = 267.0
 margin_bottom = 112.0
 icon = ExtResource( 4 )
 
 [node name="HelpButton" type="Button" parent="ActionButtons"]
-margin_left = 238.0
-margin_right = 336.0
+margin_left = 271.0
+margin_right = 369.0
 margin_bottom = 112.0
 custom_fonts/font = ExtResource( 2 )
 text = "HELP"
 expand_icon = true
 
 [node name="HeaderManaPower" type="Label" parent="."]
-margin_left = 384.0
+margin_left = 404.0
 margin_top = 24.0
-margin_right = 499.0
+margin_right = 519.0
 margin_bottom = 111.0
 custom_fonts/font = ExtResource( 2 )
 text = "Mana:

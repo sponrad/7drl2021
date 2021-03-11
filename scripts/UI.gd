@@ -114,4 +114,4 @@ func _on_RecastButton_pressed():
     if $SpellPicker.get_node("CastSpellList").selected_spell:
         _on_CastButton_pressed()
     else:
-        game_manager.get_node('Wizard').show_message("I've nothing to cast...")
+        game_manager.get_node('Wizard').show_message("I've nothing selected to cast...")

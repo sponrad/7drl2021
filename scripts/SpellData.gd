@@ -23,6 +23,7 @@ enum spells {
     ROOTS,
     BARRIER,
     CLEAR_FOG, # start
+    ZAP,
 }
 
 class Spell:
@@ -158,7 +159,16 @@ var defs = {
         2,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/CLEAR_FOG.tscn'
-    )
+    ),
+    spells.ZAP: Spell.new(
+        'Zap',
+        'Launch several zaps of energy at the target.',
+        5,
+        25,
+        targeting.ANY_VISIBILE,
+        'res://scenes/spells/ENERGY_ZAP.tscn',
+        {'upkeep': 0, 'attack': 2, 'health': 0}
+    ),
 }
 
 

@@ -71,9 +71,9 @@
 * DONE teleport item sparkles should disappear
 * TODO bug when killing small enemy with firebolt (on android)
 * TODO bug killing end boss (on macos and android)
-* TODO make dev builds targeting android and linux etc, recreate some bugs
+* DONE make dev builds targeting android and linux etc, recreate some bugs
 * DONE clear fog spell to avoid use of magic spirit
-* TODO another direct damage spell between fire bolt and void ray, something to two shot most normal enemies, void ray is ~5 shot on boss
+* DONE another direct damage spell between fire bolt and void ray, something to two shot most normal enemies, void ray is ~5 shot on boss
 * DONE give void ray a drawn black line from wizard to target
 * DONE start with teleport item
 * DONE bump down item spawns a hair
