@@ -33,8 +33,8 @@
 ** DONE BUG stop enemy movement during firing of projectile
 ** DONE damage numbers foating over when hit
 ** DONE enemy movement toward wizard or nearest summon (to attack it)
-** DONE death if wizard is hit
 * TODO forest delayed next move
+* DONE death if wizard is hit
 * DONE put places of interest on the map (power boost spots!)
 * DONE enemies drop goods (but how do you get them)
 ** item that raises power
@@ -47,7 +47,7 @@
 * DONE power allocation per turn, mana vs spell research
 * DONE remove the stats UI page
 * DONE research new spells
-* TODO spells spells spells
+* DONE spells spells spells
 ** DONE teleport item
 ** DONE an AOE spell (lightning?)
 ** DONE another stronger summon
@@ -56,7 +56,7 @@
 ** DONE roots
 ** DONE magic sheild to take some hits
 ** DONE mastery
-* TODO attack animation or nudge thing
+* DONE attack animation or nudge thing
 * TODO sounds
 * DONE on certain turn number, monsters, boss, fow all awake/active
 * DONE prevent enemies moving through enemies
@@ -70,3 +70,11 @@
 * DONE enchant cant be doubled up on the same tile
 * DONE teleport item sparkles should disappear
 * TODO bug when killing small enemy with firebolt (on android)
+* TODO bug killing end boss (on macos and android)
+* TODO make dev builds targeting android and linux etc, recreate some bugs
+* TODO clear fog spell to avoid use of magic spirit
+* TODO start with teleport item
+* TODO bump down item spawns a hair
+* TODO bump down gains from enchant tile
+* TODO another direct damage spell between fire bolt and void ray
+* TODO scale up font on picker and researcher
