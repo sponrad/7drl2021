@@ -121,11 +121,11 @@ var defs = {
     spells.SPIDER: Spell.new(
         'Summon Giant Armored Spider',
         'Summon a spider. A huge one that is armored',
-        25,
-        40,
+        50,
+        80,
         targeting.NEXT_TO_WIZARD,
         'res://scenes/spells/SPIDER.tscn',
-        {'upkeep': 10, 'attack': 4, 'health': 12}
+        {'upkeep': 10, 'attack': 9, 'health': 40}
     ),
     spells.VOID_RAY: Spell.new(
         'Void Ray',

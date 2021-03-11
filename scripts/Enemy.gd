@@ -28,9 +28,9 @@ func _ready():
     var chance = randi() % 100
     if chance > 50 and chance < 75:
         type = EnemyData.types.BLOB
-    elif chance >= 75 and chance < 95:
+    elif chance >= 75 and chance < 90:
         type = EnemyData.types.DEMON
-    elif chance >= 95:
+    elif chance >= 90:
         type = EnemyData.types.MAGE
     for tilemap in typeTileMaps.values():
         tilemap.hide()

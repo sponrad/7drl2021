@@ -23,5 +23,5 @@ var defs = {
     types.MAGE: Enemy.new(3, 5, 3),
     types.BLOB: Enemy.new(2, 10, 0),
     types.SKELETON: Enemy.new(1, 2, 0),
-    types.KRAKEN: Enemy.new(5, 125, 2),
+    types.KRAKEN: Enemy.new(10, 125, 2),
 }
