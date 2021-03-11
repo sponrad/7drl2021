@@ -50,6 +50,11 @@ func end_turn ():
         # someone better unpause us!
         return
     update_per_turn_numbers()
+    if current_summon \
+        and (current_mana + mana_per_turn) < 0:
+            current_summon.take_damage(10000)
+            $Wizard.show_message('I can no longer support that summon...')
+            update_per_turn_numbers()
     current_mana += mana_per_turn
     # increase current turn
     current_turn += 1

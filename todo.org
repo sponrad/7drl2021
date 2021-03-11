@@ -33,7 +33,8 @@
 ** DONE BUG stop enemy movement during firing of projectile
 ** DONE damage numbers foating over when hit
 ** DONE enemy movement toward wizard or nearest summon (to attack it)
-* TODO forest delayed next move
+
+* DONE forest delayed next move
 * DONE death if wizard is hit
 * DONE put places of interest on the map (power boost spots!)
 * DONE enemies drop goods (but how do you get them)
@@ -82,4 +83,5 @@
 * DONE add recast spell button
 * TODO itd be nice to have another way to get power scaling going
 * DONE scale fire bolt and void ray projectile speed similar to teleport item
-* TODO game name etc
+* DONE game name etc
+* DONE desummon when mana is about to go negative!
