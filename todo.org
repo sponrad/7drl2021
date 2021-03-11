@@ -69,3 +69,4 @@
   adding the same spells to the map everytime
 * DONE enchant cant be doubled up on the same tile
 * DONE teleport item sparkles should disappear
+* TODO bug when killing small enemy with firebolt (on android)

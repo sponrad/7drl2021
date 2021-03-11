@@ -113,7 +113,7 @@ func cast_spell(target_tile):
         end_turn()
     else:
         #print('skipping end turn call on cast_spell')
-		pass
+        pass
 
 func add_to_power_per_turn(amount):
     power_per_turn += amount
