@@ -229,6 +229,6 @@ format = 1
 tile_data = PoolIntArray( 0, 4, 0, 65538, 0, 0 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.12
 autostart = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
