@@ -82,3 +82,4 @@
 * DONE add recast spell button
 * TODO itd be nice to have another way to get power scaling going
 * DONE scale fire bolt and void ray projectile speed similar to teleport item
+* TODO game name etc
