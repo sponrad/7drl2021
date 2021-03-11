@@ -5,20 +5,17 @@ var discovered_spells: Array = []
 var is_casting = false
 var barrier
 onready var game_manager : Node = get_node("/root/MainScene")
+var testing = true
 
 func _ready():
     z_index = 0
     known_spells = [
-        #SpellData.spells.ENCHANT_AREA,
-        #SpellData.spells.FAR_SIGHT,
         SpellData.spells.MAGIC_SPIRIT,
         SpellData.spells.FIRE_BOLT,
-        #SpellData.spells.SPELL_OF_MASTERY,
-        #SpellData.spells.LIGHTNING
     ]
-    # start with some learnable spells
-    #discovered_spells.append(ItemData.find_unique_spell(self))
-    #discovered_spells.append(ItemData.find_unique_spell(self))
+    if testing:
+        known_spells = SpellData.spells.values()
+        game_manager.current_mana = 10000
 
 func _process(delta):
     if is_casting:

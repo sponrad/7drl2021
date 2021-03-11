@@ -73,8 +73,9 @@
 * TODO bug killing end boss (on macos and android)
 * TODO make dev builds targeting android and linux etc, recreate some bugs
 * TODO clear fog spell to avoid use of magic spirit
+* TODO another direct damage spell between fire bolt and void ray
+* DONE give void ray a drawn black line from wizard to target
 * TODO start with teleport item
 * TODO bump down item spawns a hair
 * TODO bump down gains from enchant tile
-* TODO another direct damage spell between fire bolt and void ray
 * DONE scale up font on picker and researcher
