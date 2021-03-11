@@ -5,7 +5,7 @@ var discovered_spells: Array = []
 var is_casting = false
 var barrier
 onready var game_manager : Node = get_node("/root/MainScene")
-var testing = false
+var testing = true
 
 func _ready():
     z_index = 0

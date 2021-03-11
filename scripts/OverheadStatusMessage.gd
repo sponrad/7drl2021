@@ -7,7 +7,7 @@ func _ready():
     pass # Replace with function body.
 
 func _process(delta):
-    position = position + Vector2.UP * delta * velocity
+    position = position + Vector2.DOWN * delta * velocity
     opacity -= delta * 0.2
     modulate.a = opacity
 

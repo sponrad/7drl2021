@@ -109,6 +109,7 @@ func cast_spell(target_tile):
     map.show_visible_tile_power(false)
     ui.set_casting_spell_icon(false)
     var spell_scene = load(SpellData.defs[spell_to_cast].scene_path)
+    $Wizard.show_message(SpellData.defs[spell_to_cast].name)
     var spell = spell_scene.instance()
     spell.position = target_tile.position
     add_child(spell)
