@@ -219,14 +219,14 @@
 script = ExtResource( 2 )
 
 [node name="Sprite" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0.537255 )
 use_parent_material = true
-position = Vector2( -32, -32 )
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( 0, -150 )
+scale = Vector2( 10, 10 )
 tile_set = SubResource( 1 )
 cell_tile_origin = 1
 format = 1
-tile_data = PoolIntArray( 0, 4, 4 )
+tile_data = PoolIntArray( 0, 4, 0, 65538, 0, 0 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

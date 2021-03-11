@@ -17,8 +17,8 @@ func _ready():
         #SpellData.spells.LIGHTNING
     ]
     # start with some learnable spells
-    discovered_spells.append(ItemData.find_unique_spell(self))
-    discovered_spells.append(ItemData.find_unique_spell(self))
+    #discovered_spells.append(ItemData.find_unique_spell(self))
+    #discovered_spells.append(ItemData.find_unique_spell(self))
 
 func _process(delta):
     if is_casting:

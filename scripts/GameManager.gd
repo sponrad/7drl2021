@@ -61,9 +61,9 @@ func end_turn ():
     ui.on_end_turn()
     if current_summon and current_summon.health > 0:
         start_move_summon()
-    if current_turn == 190:
+    if current_turn == 90:
         $Wizard.show_message('Everything is waking up soon...')
-    if current_turn > 200:
+    if current_turn == 100:
         wake_and_show_all()
 
 

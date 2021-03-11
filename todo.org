@@ -65,5 +65,7 @@
 * DONE animate item pickup (send it to wizard)
 * DONE share move and attack code on summons
 * DONE setup page on itchio
-* TODO find_unique_spell seems to be non random
+* DONE find_unique_spell seems to be non random
   adding the same spells to the map everytime
+* DONE enchant cant be doubled up on the same tile
+* DONE teleport item sparkles should disappear

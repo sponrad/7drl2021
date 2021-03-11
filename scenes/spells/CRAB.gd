@@ -16,4 +16,4 @@ func move_to(target_tile):
     SpellData.summon_move_to(self, target_tile)
 
 func take_damage(amount):
-    SpellData.summontake_damage(self, amount)
+    SpellData.summon_take_damage(self, amount)

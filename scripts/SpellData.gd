@@ -103,8 +103,8 @@ var defs = {
     spells.SPELL_OF_MASTERY: Spell.new(
         'Spell of Mastery',
         'You win no questions asked',
-        50,
         100,
+        200,
         targeting.SELF,
         'res://scenes/spells/MASTERY.tscn'
     ),
@@ -115,7 +115,7 @@ var defs = {
         40,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/LIGHTNING.tscn',
-        {'upkeep': 0, 'attack': 2, 'health': 0}
+        {'upkeep': 0, 'attack': 4, 'health': 0}
     ),
     spells.SPIDER: Spell.new(
         'Summon Giant Armored Spider',
@@ -129,11 +129,11 @@ var defs = {
     spells.VOID_RAY: Spell.new(
         'Void Ray',
         'Pure void energy extends from you to the target. Not many things survive that.',
-        25,
-        40,
+        50,
+        100,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/VOID_RAY.tscn',
-        {'upkeep': 0, 'attack': 10000, 'health': 0}
+        {'upkeep': 0, 'attack': 25, 'health': 0}
     ),
     spells.ROOTS: Spell.new(
         'Roots',

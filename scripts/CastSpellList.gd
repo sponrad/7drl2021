@@ -29,9 +29,11 @@ func _on_CastSpellList_item_selected(index):
     else:
         picker.get_node('CastButton').disabled = true
     picker.get_node('SpellName').text = spell_def.name
-    var text = "%s\n\n\nCost: %s mana\nUpkeep: %s mana per turn" % [
+    var text = "%s\n\n\nCost: %s mana\nUpkeep: %s mana per turn\nAttack: %s\nHealth: %s" % [
         spell_def.description,
         spell_def.cost,
-        spell_def.upkeep
+        spell_def.upkeep,
+        spell_def.attack,
+        spell_def.health,
     ]
     picker.get_node('SpellDescription').text = text

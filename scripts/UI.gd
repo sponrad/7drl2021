@@ -24,6 +24,8 @@ func _input(event):
     elif event.is_action_pressed('ui_cast_spell'):
         if $SpellPicker.get_node("CastSpellList").selected_spell:
             _on_CastButton_pressed()
+    elif event.is_action_pressed('ui_research_spell'):
+        _on_ResearchButton_pressed()
     elif event.is_action_pressed('ui_select'):
         if get_parent().get_node("StartSplash").visible:
             _on_StartButton_pressed()
@@ -103,6 +105,7 @@ func _on_ResearchSpellButton_pressed():
     var spell = $SpellResearcher.get_node("ResearchSpellList").selected_spell
     $SpellResearcher.hide()
     game_manager.current_mana -= SpellData.defs[spell].research_cost
+    update_resource_text()
     var wizard = game_manager.get_node('Wizard')
     wizard.discovered_spells.erase(spell)
     wizard.known_spells.append(spell)

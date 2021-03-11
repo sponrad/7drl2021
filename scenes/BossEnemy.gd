@@ -103,8 +103,8 @@ func take_damage(amount):
         remove_from_group('monsters')
         for tilemap in typeTileMaps.values():
             tilemap.hide()
-        typeCorpseTileMaps[type].show()
+        #typeCorpseTileMaps[type].show()
         # maybe spawn an item
-        if randi() % 100 > 50:
-            game_manager.spawn_item(grid_position())
+#        if randi() % 100 > 50:
+#            game_manager.spawn_item(grid_position())
         game_manager.win()

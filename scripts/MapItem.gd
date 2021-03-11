@@ -5,7 +5,6 @@ var type
 var spell_type
 var direction
 var velocity = 500
-var traveling = false
 var wizard_pos
 
 onready var game_manager : Node = get_node("/root/MainScene")
@@ -19,11 +18,11 @@ func _ready():
     }
     # should have a higher chance for spellbook
     var chance = randi() % 100
-    if chance < 40:
+    if chance < 30:
         type = ItemData.types.SPELLBOOK
-    elif chance < 60:
+    elif chance < 65:
         type = ItemData.types.MANA_INC
-    elif chance < 80:
+    elif chance < 85:
         type = ItemData.types.POWER_INC
     else:
         type = ItemData.types.POWER
@@ -48,6 +47,8 @@ func _process(delta):
         queue_free()
 
 func gain_item():
+    # set velocity here
+    velocity = position.distance_to(wizard_pos) * 4
     set_process(true)
 
 func get_name():
@@ -56,9 +57,9 @@ func get_name():
     elif type == ItemData.types.POWER_INC:
         return "Power +1"
     elif type == ItemData.types.MANA_INC:
-        return "Mana +5"
+        return "Mana +10"
     elif type == ItemData.types.POWER:
-        return "Research +10"
+        return "Mana +30"
 
 func get_item_effect():
     var message = ""
@@ -69,10 +70,11 @@ func get_item_effect():
         game_manager.power_per_turn += 1
         message = "Power +1"
     elif type == ItemData.types.MANA_INC:
-        game_manager.current_mana += 5
-        message = "Mana +5"
+        game_manager.current_mana += 10
+        message = "Mana +10"
     elif type == ItemData.types.POWER:
-        message = "Research +10"
+        game_manager.current_mana += 30
+        message = "Mana +30"
     game_manager.get_node('Wizard').show_message(message)
     game_manager.update_per_turn_numbers()
     game_manager.ui.update_resource_text()

@@ -205,13 +205,15 @@ margin_right = 504.0
 margin_bottom = 536.0
 text = "How to play
 
-Use the cast button in the lower left to cast spells. Use those spells to explore the tiny island.
+Use the cast button in the lower left to cast spells. Use those spells to explore the tiny island. You win by casting the Spell of Mastery or by defeating the big boss at the far east side.
 
-Spells cost mana to cast.
+Spells cost mana to cast and you earn mana each turn based on your power. Increase power through spells or by finding power up items.
 
 Some spells, like summons, also have an upkeep cost which you have to pay mana for every turn.
 
-Your mana earned per turn is a function of your current power. You can spend your power on mana production or on researching new spells."
+Monsters wake up when they are attacked (at really high turn counts everything wakes up eventually)
+
+New spells have to be researched before they can be cast, research is just an initial up front mana cost."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -223,9 +225,11 @@ margin_right = 1096.0
 margin_bottom = 536.0
 text = "Commands
 
-Z - opens and closes the spell select window
+Z - opens/closes the spell select window
+X - opens/closes the spell research window
 C - recasts your last spell
-Space - end turn, and confirm for start and restart game
+Space - Confirm for start and restart game, and initiates the selected UI item
+Arrow keys - select UI items
 
 Mouse/touch for everything else"
 __meta__ = {
