@@ -77,4 +77,4 @@
 * TODO bump down item spawns a hair
 * TODO bump down gains from enchant tile
 * TODO another direct damage spell between fire bolt and void ray
-* TODO scale up font on picker and researcher
+* DONE scale up font on picker and researcher
