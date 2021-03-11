@@ -17,6 +17,7 @@ func _ready():
     rotation = direction.angle() - 0.5 * PI
     position = start_pos
     game_manager.set_paused(true)
+    velocity = position.distance_to(end_pos) * 2
 
 func destroy(pos):
     # remove the power from the globals

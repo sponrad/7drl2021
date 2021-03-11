@@ -17,6 +17,7 @@ func _ready():
     direction = position - start_pos
     position = start_pos
     game_manager.set_paused(true)
+    velocity = position.distance_to(end_pos)
 
 
 func grid_position(pos):
