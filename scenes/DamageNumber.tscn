@@ -3,6 +3,7 @@
 [ext_resource path="res://scripts/DamageNumber.gd" type="Script" id=1]
 
 [node name="DamageNumber" type="Node2D"]
+scale = Vector2( 2, 2 )
 z_index = 1
 script = ExtResource( 1 )
 
