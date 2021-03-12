@@ -107,6 +107,7 @@ __meta__ = {
 }
 
 [node name="SpellPicker" type="WindowDialog" parent="."]
+visible = true
 margin_left = 96.0
 margin_top = -512.0
 margin_right = 968.0
@@ -117,6 +118,7 @@ __meta__ = {
 }
 
 [node name="CastSpellList" type="ItemList" parent="SpellPicker"]
+visible = false
 margin_left = 8.0
 margin_right = 488.0
 margin_bottom = 520.0
@@ -137,10 +139,10 @@ __meta__ = {
 }
 
 [node name="SpellDescription" type="RichTextLabel" parent="SpellPicker"]
-margin_left = 496.0
-margin_top = 112.0
-margin_right = 872.0
-margin_bottom = 520.0
+margin_left = 504.0
+margin_top = 109.0
+margin_right = 864.0
+margin_bottom = 517.0
 
 [node name="CastButton" type="Button" parent="SpellPicker"]
 margin_left = 496.0
@@ -185,9 +187,9 @@ __meta__ = {
 
 [node name="SpellDescription" type="RichTextLabel" parent="SpellResearcher"]
 margin_left = 576.0
-margin_top = 120.0
+margin_top = 112.0
 margin_right = 1024.0
-margin_bottom = 464.0
+margin_bottom = 456.0
 
 [node name="ResearchSpellButton" type="Button" parent="SpellResearcher"]
 margin_left = 576.0
