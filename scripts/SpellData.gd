@@ -155,7 +155,7 @@ var defs = {
     spells.CLEAR_FOG: Spell.new(
         'Clear Fog',
         'Clear a small amount of foggy clouds. Enemies wake up if you cast this on them!',
-        0,
+        1,
         2,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/CLEAR_FOG.tscn'
