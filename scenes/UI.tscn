@@ -107,7 +107,6 @@ __meta__ = {
 }
 
 [node name="SpellPicker" type="WindowDialog" parent="."]
-visible = true
 margin_left = 96.0
 margin_top = -512.0
 margin_right = 968.0
@@ -118,7 +117,6 @@ __meta__ = {
 }
 
 [node name="CastSpellList" type="ItemList" parent="SpellPicker"]
-visible = false
 margin_left = 8.0
 margin_right = 488.0
 margin_bottom = 520.0
