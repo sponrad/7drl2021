@@ -1,18 +1,20 @@
 extends Node2D
 
-var velocity = 40
-var opacity = 1.0
+var textLines = PoolStringArray([])
+var maxLines = 6
 
 func _ready():
-    pass # Replace with function body.
+    z_index = 1
 
-func _process(delta):
-    position = position + Vector2.DOWN * delta * velocity
-    opacity -= delta * 0.2
-    modulate.a = opacity
+func add_message(text: String):
+    textLines.insert(0, text)
+    if textLines.size() > maxLines:
+        textLines.remove(maxLines)
+    $TextOne.text = textLines[0]
+    var temp = textLines
+    temp.remove(0)
+    $TextRest.text = temp.join("\n")
 
-func set_text(text: String):
-    $RichTextLabel.text = text
-
-func _on_Timer_timeout():
-    queue_free()
+func _on_NewLineTimer_timeout():
+    add_message("")
+    $NewLineTimer.start()

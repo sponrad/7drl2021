@@ -6,9 +6,10 @@ var is_casting = false
 var barrier
 onready var game_manager : Node = get_node("/root/MainScene")
 var testing = false
+var current_message
 
 func _ready():
-    z_index = 0
+    z_index = -1
     known_spells = [
         SpellData.spells.CLEAR_FOG,
         SpellData.spells.TELEPORT_ITEM,
@@ -39,6 +40,7 @@ func take_damage(amount):
     game_manager.game_over()
 
 func show_message(message):
-    var status_message = Globals.OverheadMessage.instance()
-    status_message.set_text(message)
-    add_child(status_message)
+    if not current_message:
+        current_message = Globals.OverheadMessage.instance()
+        add_child(current_message)
+    current_message.add_message(message)

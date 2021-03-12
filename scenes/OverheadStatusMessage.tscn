@@ -7,18 +7,32 @@
 z_index = 1
 script = ExtResource( 2 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-autostart = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_right = 378.0
-margin_bottom = 137.0
+[node name="TextOne" type="RichTextLabel" parent="."]
+margin_right = 1271.0
+margin_bottom = 433.0
 mouse_filter = 2
 custom_fonts/normal_font = ExtResource( 1 )
 text = "sample text"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[node name="TextRest" type="RichTextLabel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.529412 )
+margin_top = 39.0
+margin_right = 1271.0
+margin_bottom = 472.0
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 1 )
+text = "two
+lines
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewLineTimer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="NewLineTimer" to="." method="_on_NewLineTimer_timeout"]
