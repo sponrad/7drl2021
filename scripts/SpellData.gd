@@ -70,7 +70,7 @@ var defs = {
     spells.FAR_SIGHT: Spell.new(
         'Far Sight',
         'Magically remove the foggy clouds from a large region of the map. Enemies stay asleep to boot!',
-        5,
+        3,
         10,
         targeting.ANY_FOG,
         'res://scenes/spells/FAR_SIGHT.tscn'
@@ -163,8 +163,8 @@ var defs = {
     spells.ZAP: Spell.new(
         'Zap',
         'Launch several zaps of energy at the target.',
-        5,
-        25,
+        4,
+        15,
         targeting.ANY_VISIBILE,
         'res://scenes/spells/ENERGY_ZAP.tscn',
         {'upkeep': 0, 'attack': 2, 'health': 0}
