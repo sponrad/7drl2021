@@ -243,7 +243,11 @@ C - recasts your last spell (also the cast button next to the spell icon will do
 Space - Confirm for start and restart game, and initiates the selected UI item
 Arrow keys - select UI items
 
-Mouse/touch for everything else"
+Mouse/touch for everything else
+
+
+Enemies
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }

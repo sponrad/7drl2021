@@ -17,6 +17,7 @@ var cancel_cast_icon = preload("res://sprites/X.png")
 func _ready():
     hide()
     get_parent().get_node("StartSplash").show()
+    populateEnemyStats()
 
 func _input(event):
     if event.is_action_pressed('ui_spellpicker'):
@@ -111,8 +112,22 @@ func _on_ResearchSpellButton_pressed():
     wizard.known_spells.append(spell)
     wizard.show_message("Learned %s" % SpellData.defs[spell].name)
 
+
 func _on_RecastButton_pressed():
     if $SpellPicker.get_node("CastSpellList").selected_spell:
         _on_CastButton_pressed()
     else:
         game_manager.get_node('Wizard').show_message("I've nothing selected to cast...")
+
+
+func populateEnemyStats():
+    var text = "\n"
+    for enemy_type in EnemyData.types.values():
+        var enemy = EnemyData.defs[enemy_type]
+        text += "%s: %s attack, %s hp, %s range\n" % [
+            enemy.name,
+            enemy.attack,
+            enemy.health,
+            enemy.attack_range,
+        ]
+    $HelpDialog/RichTextLabel2.text += text
