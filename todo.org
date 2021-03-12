@@ -70,8 +70,8 @@
   adding the same spells to the map everytime
 * DONE enchant cant be doubled up on the same tile
 * DONE teleport item sparkles should disappear
-* TODO bug when killing small enemy with firebolt (on android)
-* TODO bug killing end boss (on macos and android)
+* DONE bug when killing small enemy with firebolt (on android)
+* DONE bug killing end boss (on macos and android)
 * DONE make dev builds targeting android and linux etc, recreate some bugs
 * DONE clear fog spell to avoid use of magic spirit
 * DONE another direct damage spell between fire bolt and void ray, something to two shot most normal enemies, void ray is ~5 shot on boss
