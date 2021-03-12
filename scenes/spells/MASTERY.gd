@@ -3,6 +3,7 @@ extends Area2D
 onready var game_manager : Node = get_node("/root/MainScene")
 
 func _ready():
+    game_manager.paused = true
     game_manager.wake_and_show_all()
 
 func _on_Timer_timeout():
