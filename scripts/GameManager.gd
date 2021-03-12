@@ -16,6 +16,8 @@ var currently_moving_summon: bool = false
 onready var ui : Node = get_node("UIZINDEX/UI")
 onready var map : Node = get_node("Tiles")
 
+var all_awake = false
+
 var paused = false
 
 
@@ -72,12 +74,15 @@ func end_turn ():
 
 
 func wake_and_show_all():
+    if all_awake:
+        return
     $Wizard.show_message('Everything is awake!!!')
     for monster in get_tree().get_nodes_in_group("monsters"):
         if not monster.awake:
             monster.awaken()
     for tile in map.allTiles:
         tile.clear_fog()
+    all_awake = true
 
 
 func on_select_spell(spell):
