@@ -81,7 +81,8 @@ func set_casting_spell_icon(casting):
         actionButtons.get_node("SelectCastButton").icon = cast_spell_icon
 
 func _on_ResearchButton_pressed():
-    if $SpellResearcher.visible or game_manager.currently_casting_spell:
+    game_manager.cancel_spell_cast()
+    if $SpellResearcher.visible:
         $SpellResearcher.hide()
     else:
         $SpellResearcher.popup()
