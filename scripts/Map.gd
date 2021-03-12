@@ -64,7 +64,7 @@ func highlight_available_tiles ():
                     tile.toggle_highlight(true)
         elif targeting == SpellData.targeting.ITEM:
             for tile in allTiles:
-                if tile.has_item():
+                if tile.has_item() and not tile.fog_of_war:
                     tile.toggle_highlight(true)
         elif targeting == SpellData.targeting.SELF:
             var pos = Globals.wizard_start
