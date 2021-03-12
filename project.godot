@@ -18,7 +18,7 @@ _global_script_class_icons={
 config/name="Arcane Island"
 config/description="A power hungry Wizard on a monster infested island covered in clouds"
 run/main_scene="res://scenes/MainScene.tscn"
-boot_splash/image="res://icon.png"
+boot_splash/image="res://loading.png"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 
